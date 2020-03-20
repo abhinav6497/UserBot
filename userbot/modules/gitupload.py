@@ -90,6 +90,9 @@ async def git_commit(file_name,mone):
         return await mone.edit("`Committed Suicide`")
         
         
-CMD_HELP.update({"commit": "GITHUB File Uploader Plugin for userbot. Heroku Automation should be Enabled. Else u r not that lazy // For lazy people
-Instructions:- Set GITHUB_ACCESS_TOKEN and GIT_REPO_NAME Variables in Heroku vars First
-usage:- .commit reply_to_any_plugin //can be any type of file too. but for plugin must be in .py ."})
+CMD_HELP.update({
+    "commit": 
+    ".commit\
+    \nUsage: GITHUB File Uploader Plugin for userbot. Heroku Automation should be Enabled. Else u r not that lazy , For lazy people\
+\nInstructions:- Set GITHUB_ACCESS_TOKEN and GIT_REPO_NAME Variables in Heroku vars First\
+\n.commit reply_to_any_plugin can be any type of file too. but for plugin must be in .py ."})
