@@ -1,6 +1,6 @@
 # ported on OUB by @Mayur_Karaniya
 
-from github import Git
+from github import git
 import aiohttp
 import asyncio
 import os
