@@ -1,10 +1,4 @@
-"""
-GITHUB File Uploader Plugin for userbot. Heroku Automation should be Enabled. Else u r not that lazy // For lazy people
-Instructions:- Set GITHUB_ACCESS_TOKEN and GIT_REPO_NAME Variables in Heroku vars First
-usage:- .commit reply_to_any_plugin //can be any type of file too. but for plugin must be in .py 
-By:- @Zero_cool7870 
-
-"""
+# ported on OUB by @Mayur_Karaniya
 
 from github import Github
 import aiohttp
