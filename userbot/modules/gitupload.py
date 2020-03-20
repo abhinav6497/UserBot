@@ -1,6 +1,6 @@
 # ported on OUB by @Mayur_Karaniya
 
-import Github
+from github import Git
 import aiohttp
 import asyncio
 import os
@@ -12,7 +12,7 @@ from telethon.tl.types import DocumentAttributeVideo
 # from uniborg.util import admin_cmd, humanbytes, progress, time_formatter
 from userbot.events import register
 from userbot.events import humanbytes, progress, time_formatter
-from userbot import CMD_HELP
+from userbot import CMD_HELP, GITHUB_ACCESS_TOKEN, GIT_REPO_NAME
 
 
 GIT_TEMP_DIR = "./userbot/temp/"
