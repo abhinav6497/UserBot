@@ -1,9 +1,8 @@
 aiohttp
 aria2p
 async_generator
-bs4
 cowpy
-# cryptg>=0.2
+TgCrypto>=1.2.0
 cffi>=1.0.0
 dnspython
 emoji
@@ -21,7 +20,7 @@ httplib2==0.15.0
 humanize
 lxml
 oauth2client
-Pillow>=5.3.0
+Pillow>=6.0.0
 psycopg2
 psycopg2-binary
 pybase64>=0.4.0
@@ -29,7 +28,6 @@ pylast
 pySmartDL
 python-barcode
 python-dotenv
-youtube-dl
 pytz
 qrcode
 requests>=2.18.4
@@ -43,3 +41,6 @@ wikipedia>=1.4.0
 coffeehouse>=2.1.0
 git+https://github.com/johnwmillr/LyricsGenius.git
 lyricsgenius
+redis>=3.3.10
+beautifulsoup4>=4.8.1
+youtube-dl>=2019.9.28
