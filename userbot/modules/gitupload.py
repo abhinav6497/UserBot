@@ -18,8 +18,8 @@ from userbot import CMD_HELP, GITHUB_ACCESS_TOKEN, GIT_REPO_NAME, bot
 
 GIT_TEMP_DIR = "./userbot/temp/"
 # @borg.on(admin_cmd(pattern="commit ?(.*)", allow_sudo=True))
-# @register(outgoing=True, pattern="^.commt(?: |$)(.*)")
-@register(pattern=r".git (.*)", outgoing=True)
+@register(outgoing=True, pattern="^.commit(?: |$)(.*)")
+# @register(pattern=r".commit (.*)", outgoing=True)
 async def download(event):
     if event.fwd_from:
         return	
