@@ -14,7 +14,7 @@ import qrcode
 import barcode
 from barcode.writer import ImageWriter
 
-from bs4 import BeautifulSoup
+import BeautifulSoup4
 
 from userbot import CMD_HELP
 from userbot.events import register
