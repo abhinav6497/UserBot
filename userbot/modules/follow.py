@@ -29,3 +29,8 @@ async def follow(follow):
                      f"[FaceBook](https://www.facebook.com/mkaraniya) \n"
                      f"[YouTube](https://www.youtube.com/channel/UCeKQxQK7XZ3jGi3541uWATg?sub_confirmation=1) "
                      )    
+
+# @register(outgoing=True, pattern="^.creator$")
+# async def creator(e):
+#     await e.edit("[TeKnoways](https://t.me/Three_Cube_TeKnoways)")
+
