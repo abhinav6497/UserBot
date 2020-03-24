@@ -33,23 +33,15 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 async def follow(follow):
     """ For .follow command, check if the bot is running.  """
     await follow.edit(
-                     f"`FOLLOW {DEFAULTUSER} ON` \n"
-                     f"[InstaGram](https://www.instagram.com/mayur_karaniya) \n"
-                     f"[FaceBook](https://www.facebook.com/mkaraniya) \n"
+                     f"`FOLLOW {DEFAULTUSER} ON` \n\n"
+                     f"[InstaGram](https://www.instagram.com/mayur_karaniya) \n\n"
+                     f"[FaceBook](https://www.facebook.com/mkaraniya) \n\n"
                      f"[YouTube](https://www.youtube.com/channel/UCeKQxQK7XZ3jGi3541uWATg?sub_confirmation=1) "
                      )    
 
 
 
-""" @register(outgoing=True, pattern="^.readme$")
-async def reedme(e):
-    await e.edit(
-        "Here's something for you to read:\n"
-        "\n[OpenUserBot's README.md file](https://github.com/mkaraniya/OpenUserBot/blob/sql-extended/README.md)"
-        "\n[Setup Guide - Basic](https://telegra.ph/How-to-host-a-Telegram-Userbot-11-02)"
-        "\n[Setup Guide - Google Drive](https://telegra.ph/How-To-Setup-GDrive-11-02)"
-        "\n[Setup Guide - LastFM Module](https://telegra.ph/How-to-set-up-LastFM-module-for-Paperplane-userbot-11-02)"
-        "\n[Video Tutorial - 576p](https://mega.nz/#!ErwCESbJ!1ZvYAKdTEfb6y1FnqqiLhHH9vZg4UB2QZNYL9fbQ9vs)"
-        "\n[Video Tutorial - 1080p](https://mega.nz/#!x3JVhYwR!u7Uj0nvD8_CyyARrdKrFqlZEBFTnSVEiqts36HBMr-o)"
-        "\n[Special - Note](https://telegra.ph/Special-Note-11-02)")
-    """
+CMD_HELP.update({
+    "follow":
+    ".follow\
+    \nUsage: Type .follow to provide your follow links.\
