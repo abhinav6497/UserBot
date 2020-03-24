@@ -46,4 +46,3 @@ beautifulsoup4>=4.8.1
 youtube-dl>=2019.9.28
 PyGithub
 bs4
-cryptg>=0.2.post0
