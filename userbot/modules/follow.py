@@ -44,4 +44,5 @@ async def follow(follow):
 CMD_HELP.update({
     "follow":
     ".follow\
-    \nUsage: Type .follow to provide your follow links.\
+    \nUsage: Type .follow to provide your follow links."
+    })
