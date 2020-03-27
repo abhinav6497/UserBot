@@ -14,8 +14,13 @@ import os
 import io
 import sys
 import json
-from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, bot, GIT_REPO_NAME
+from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, bot, GIT_REPO_NAME, AlIVE_NAME
 from userbot.events import register
+
+
+# ================= CONSTANT =================
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
+# ============================================
 
 
 @register(outgoing=True, pattern="^.random")
@@ -136,7 +141,7 @@ async def repo_is_here(wannasee):
 async def myrepo_is_here(wannaseeme):
     """ For .myrepo command, just returns the repo URL. """
     await wannaseeme.edit(
-        f"Click [here](https://github.com/{GIT_REPO_NAME}) to open user's repo of OpenUserBot's GitHub page."
+        f"Click [here](https://github.com/{GIT_REPO_NAME}/tree/sql-extended/) to open {DEFAULTUSER}'s GitHub page"
     )
 
 @register(outgoing=True, pattern="^.raw$")
