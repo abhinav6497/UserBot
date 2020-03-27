@@ -134,7 +134,7 @@ async def repo_is_here(wannasee):
     
 @register(outgoing=True, pattern="^.myrepo$")
 async def myrepo_is_here(wannaseeme):
-    """ For .repo command, just returns the repo URL. """
+    """ For .myrepo command, just returns the repo URL. """
     await wannaseeme.edit(
         f"Click [here](https://github.com/{GIT_REPO_NAME}) to open user's repo of OpenUserBot's GitHub page."
     )
