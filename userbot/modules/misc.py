@@ -14,7 +14,7 @@ import os
 import io
 import sys
 import json
-from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, bot
+from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, bot, GIT_REPO_NAME
 from userbot.events import register
 
 
@@ -131,6 +131,13 @@ async def repo_is_here(wannasee):
         "Click [here](https://github.com/mkaraniya/OpenUserBot) to open OpenUserBot's GitHub page."
     )
 
+    
+@register(outgoing=True, pattern="^.myrepo$")
+async def myrepo_is_here(wannaseeme):
+    """ For .repo command, just returns the repo URL. """
+    await wannaseeme.edit(
+        f"Click [here](https://github.com/{GIT_REPO_NAME}) to open user's repo of OpenUserBot's GitHub page."
+    )
 
 @register(outgoing=True, pattern="^.raw$")
 async def raw(event):
@@ -189,6 +196,12 @@ CMD_HELP.update({
     'repo':
     '.repo\
 \nUsage: If you are curious what makes the userbot work, this is what you need.'
+})
+
+CMD_HELP.update({
+    'myrepo':
+    '.myrepo\
+\nUsage: If you are curious which is your personal repo, this is what you have.'
 })
 
 CMD_HELP.update({
