@@ -89,7 +89,7 @@ async def asyncrunapp_run(cmd, heroku):
 
 #@borg.on(admin_cmd(pattern="heroku ?(.*)"))
 #async def _event(heroku):
-@register(outgoing=True, pattern=r"^!heroku(?: |$)(.*)")
+@register(outgoing=True, pattern=r"^.heroku(?: |$)(.*)")
 #@#register(outgoing=True, pattern="^.heroku$")
 async def heroku_manager(manager):
     await manager.edit("`Processing...`")
