@@ -80,7 +80,7 @@ async def heroku_manager(manager):
     await manager.edit("`Processing...`")
     await asyncio.sleep(3)
     conf = manager.pattern_match.group(1)
-    result = await asyncrunapp_run(f'heroku --source app --dyno api {HEROKU_APP_NAME}', manager)
+    result = await asyncrunapp_run(f'heroku --source app --dyno api --{HEROKU_APP_NAME}', manager)
     if result != 0:
         return
     hours_remaining = result[0]
