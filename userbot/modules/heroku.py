@@ -76,7 +76,7 @@ async def asyncrunapp_run(cmd, heroku):
     subproc = await asyncrunapp(cmd, stdout=asyncPIPE, stderr=asyncPIPE)
     stdout, stderr = await subproc.communicate()
     exitCode = subproc.returncode
-    if exitCode <> 0:
+    if exitCode != 0:
         await heroku.edit(
             '**An error was detected while running subprocess**\n'
             f'```exitCode: {exitCode}\n'
