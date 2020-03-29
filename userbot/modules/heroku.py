@@ -101,3 +101,23 @@ async def heroku_manager(manager):
     hours_remaining = result[0]
     await manager.edit('`' + hours_remaining + '`')
     return
+
+
+@register(outgoing=True, pattern="^.sysd$")
+async def sysdetails(sysd):
+    """ For .sysd command, get system info using neofetch. """
+    try:
+        neo = "neofetch --stdout"
+        fetch = await asyncrunapp(
+            neo,
+            stdout=asyncPIPE,
+            stderr=asyncPIPE,
+        )
+
+        stdout, stderr = await fetch.communicate()
+        result = str(stdout.decode().strip()) \
+            + str(stderr.decode().strip())
+
+        await sysd.edit("`" + result + "`")
+    except FileNotFoundError:
+        await sysd.edit("`Install neofetch first !!`")
