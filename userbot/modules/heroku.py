@@ -94,7 +94,7 @@ async def asyncrunapp_run(cmd, heroku):
 async def heroku_manager(manager):
     await manager.edit("`Processing...`")
     await asyncio.sleep(3)
-    conf = heroku.pattern_match.group(1)
+    conf = manager.pattern_match.group(1)
     result = await asyncrunapp_run(f'heroku ps -a {HEROKU_APP_NAME}', manager)
     if result[2] != 0:
         return
