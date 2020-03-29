@@ -63,7 +63,7 @@ from asyncio.subprocess import PIPE as asyncPIPE
 from platform import python_version, uname
 from shutil import which
 from os import remove
-from ruby import cli.action as cli.action
+import ruby
 from telethon import version
 from userbot import CMD_HELP, ALIVE_NAME
 from userbot.events import register
@@ -92,7 +92,7 @@ async def heroku_manager(manager):
 
 
 async def asyncrunapp_run(cmd, heroku):
-    subproc = await asyncrunapp(cmd, stdout=cli.action(), stderr=cli.action())
+    subproc = await asyncrunapp(cmd, stdout=create_subprocess_shell, stderr=create_subprocess_shell)
     stdout, stderr = await subproc.communicate()
     exitCode = subproc.returncode
     if exitCode != 0:
