@@ -72,8 +72,8 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
 
 
-async def asyncrunapp_run(heroku):
-    subproc = await asyncrunapp(stdout=asyncPIPE, stderr=asyncPIPE)
+async def asyncrunapp_run(cmd, heroku):
+    subproc = await asyncrunapp(cmd, stdout=asyncPIPE, stderr=asyncPIPE)
     stdout, stderr = await subproc.communicate()
     exitCode = subproc.returncode
     if exitCode != 0:
@@ -89,8 +89,8 @@ async def asyncrunapp_run(heroku):
 
 #@borg.on(admin_cmd(pattern="heroku ?(.*)"))
 #async def _event(heroku):
-#@register(outgoing=True, pattern=r"^!heroku(?: |$)(.*)")
-@register(outgoing=True, pattern="^.heroku$")
+@register(outgoing=True, pattern=r"^!heroku(?: |$)(.*)")
+#@#register(outgoing=True, pattern="^.heroku$")
 async def heroku_manager(manager):
     await manager.edit("`Processing...`")
     await asyncio.sleep(3)
