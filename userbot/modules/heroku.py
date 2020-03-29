@@ -79,10 +79,11 @@ async def asyncrunapp_run(cmd, heroku):
     if exitCode != 0:
         await heroku.edit(
             '**An error was detected while running subprocess**\n'
-            f'```exitCode: {exitCode}\n'
+            f'"exitCode: {exitCode}\n'
             f'stdout: {stdout.decode().strip()}\n'
-            f'stderr: {stderr.decode().strip()}```')
+            f'stderr: {stderr.decode().strip()}"')
         return exitCode
+     elif
     return stdout.decode().strip(), stderr.decode().strip(), exitCode
 
   
@@ -99,7 +100,7 @@ async def heroku_manager(manager):
     if result != 0:
         return
     hours_remaining = result[0]
-    await manager.edit('`' + hours_remaining + '`')
+    await manager.edit("`" + hours_remaining + "`")
     return
 
 
