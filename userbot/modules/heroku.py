@@ -96,7 +96,7 @@ async def heroku_manager(manager):
     await asyncio.sleep(3)
     conf = manager.pattern_match.group()
     result = await asyncrunapp_run(f'heroku ps -a {HEROKU_APP_NAME}', manager)
-    if result[2] != 0:
+    if result[2] == 0:
         return
     hours_remaining = result[0]
     await manager.edit('`' + hours_remaining + '`')
