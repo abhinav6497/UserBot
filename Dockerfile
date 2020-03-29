@@ -53,8 +53,47 @@ RUN apk add --no-cache=true --update \
     chromium \
     chromium-chromedriver \
     zlib-dev \
-    jpeg
+    jpeg \
+#
+    build-base \
+    bzip2-dev \
+    curl \
+    coreutils \
+    figlet \
+    gcc \
+    g++ \
+    git \
+    aria2 \
+    util-linux \
+    libevent \
+    libjpeg-turbo-dev \
+    chromium \
+    chromium-chromedriver \
+    jpeg-dev \
+    libc-dev \
+    libffi-dev \
+    libpq \
+    libwebp-dev \
+    libxml2-dev \
+    libxslt-dev \
+    linux-headers \
+    musl-dev \
+    neofetch \
+    openssl-dev \
+    postgresql-client \
+    postgresql-dev \
+    pv \
+    jq \
+    wget \
+    python3-dev \
+    readline-dev \
+    ffmpeg \
+    sqlite-dev \
+    sudo \
+    zlib-dev \
+    python-dev
 
+RUN curl https://cli-assets.heroku.com/install.sh | sh
 
 RUN python3 -m ensurepip \
     && pip3 install --upgrade pip setuptools \
