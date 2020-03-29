@@ -91,7 +91,7 @@ async def heroku_manager(manager):
 
 
 async def asyncrunapp_run(cmd, heroku):
-    subproc = await asyncrunapp(cmd, stdout=asyncPIPE, stderr=asyncPIPE)
+    subproc = await asyncrunapp(cmd, stdout=cli.action(), stderr=cli.action())
     stdout, stderr = await subproc.communicate()
     exitCode = subproc.returncode
     if exitCode != 0:
