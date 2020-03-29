@@ -76,7 +76,7 @@ async def asyncrunapp_run(cmd, heroku):
     subproc = await asyncrunapp(cmd, stdout=asyncPIPE, stderr=asyncPIPE)
     stdout, stderr = await subproc.communicate()
     exitCode = subproc.returncode
-    if exitCode != 0:
+    if exitCode <> 0:
         await heroku.edit(
             '**An error was detected while running subprocess**\n'
             f'```exitCode: {exitCode}\n'
@@ -96,7 +96,7 @@ async def heroku_manager(manager):
     await asyncio.sleep(3)
     conf = manager.pattern_match.group(1)
     result = await asyncrunapp_run(f'heroku ps -a {HEROKU_APP_NAME}', manager)
-    if result[2] != 0:
+    if result[2] <> 0:
         return
     hours_remaining = result[0]
     await manager.edit('`' + hours_remaining + '`')
