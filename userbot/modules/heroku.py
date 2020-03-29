@@ -72,21 +72,6 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
 
 
-async def asyncrunapp_run(cmd, heroku):
-    subproc = await asyncrunapp(cmd, stdout=asyncPIPE, stderr=asyncPIPE)
-    stdout, stderr = await subproc.communicate()
-    exitCode = subproc.returncode
-    if exitCode != 0:
-        await heroku.edit(
-            '**An error was detected while running subprocess**\n'
-            f'"exitCode: {exitCode}\n'
-            f'stdout: {stdout.decode().strip()}\n'
-            f'stderr: {stderr.decode().strip()}"')
-        return exitCode
-    return stdout.decode().strip(), stderr.decode().strip(), exitCode
-
-  
-
 #@borg.on(admin_cmd(pattern="heroku ?(.*)"))
 #async def _event(heroku):
 @register(outgoing=True, pattern=r"^.heroku(?: |$)(.*)")
@@ -103,3 +88,19 @@ async def heroku_manager(manager):
     return
 
 
+
+
+async def asyncrunapp_run(cmd, heroku):
+    subproc = await asyncrunapp(cmd, stdout=asyncPIPE, stderr=asyncPIPE)
+    stdout, stderr = await subproc.communicate()
+    exitCode = subproc.returncode
+    if exitCode != 0:
+        await manager.edit(
+            '**An error was detected while running subprocess**\n'
+            f'"exitCode: {exitCode}\n'
+            f'stdout: {stdout.decode().strip()}\n'
+            f'stderr: {stderr.decode().strip()}"')
+        return exitCode
+    return stdout.decode().strip(), stderr.decode().strip(), exitCode
+
+  
