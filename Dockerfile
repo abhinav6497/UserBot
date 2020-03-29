@@ -9,7 +9,7 @@ RUN sed -e 's;^#http\(.*\)/edge/community;http\1/edge/community;g' -i /etc/apk/r
 #
 # Installing Packages
 #
-RUN apk add --no-cache=true --update \
+RUN apk add --update \
     coreutils \
     bash \
     build-base \
@@ -93,14 +93,16 @@ RUN apk add --no-cache=true --update \
     zlib-dev \
     python-dev
 
-RUN curl https://cli-assets.heroku.com/install.sh | sh
-
 RUN python3 -m ensurepip \
     && pip3 install --upgrade pip setuptools \
     && rm -r /usr/lib/python*/ensurepip && \
     if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi && \
     if [[ ! -e /usr/bin/python ]]; then ln -sf /usr/bin/python3 /usr/bin/python; fi && \
     rm -r /root/.cache
+
+
+
+RUN curl https://cli-assets.heroku.com/install.sh | sh
 
 #
 # Clone repo and prepare working directory
