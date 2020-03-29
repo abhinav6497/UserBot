@@ -102,7 +102,6 @@ RUN python3 -m ensurepip \
 
 
 
-RUN curl https://cli-assets.heroku.com/install.sh  /bin/sh
 
 #
 # Clone repo and prepare working directory
@@ -120,4 +119,9 @@ COPY ./sample_config.env ./userbot.session* ./config.env* /root/userbot/
 # Install requirements
 #
 RUN pip3 install -r requirements.txt
+
+RUN curl https://cli-assets.heroku.com/install.sh  /bin/sh
+
 CMD ["python3","-m","userbot"]
+
+
