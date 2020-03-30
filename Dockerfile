@@ -95,7 +95,9 @@ RUN apk add --update \
 
 
 
-RUN curl https://cli-assets.heroku.com/install.sh  /bin/sh
+RUN /bin/sh -c curl https://cli-assets.heroku.com/install.sh
+
+#RUN curl https://cli-assets.heroku.com/install.sh  /bin/sh
 
 RUN python3 -m ensurepip \
     && pip3 install --upgrade pip setuptools \
