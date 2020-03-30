@@ -80,9 +80,12 @@ Heroku = heroku3.from_key(HEROKU_API_KEY)
 
 
 async def subprocess_run(cmd, heroku):
-    subproc = await asyncSubprocess(cmd, stdout=asyncPIPE, stderr=asyncPIPE)
-    stdout, stderr = await subproc.communicate()
-    exitCode = subproc.returncode
+    subproc = await asyncio.create_subprocess_shell(cmd, 
+                                                    stdout=asyncio.subprocess.PIPE, 
+                                                    stderr=asyncio.subprocess.PIPE)
+    #stdout, stderr = 
+    await subproc.communicate()
+    exitCode = return subproc.returncode
     if exitCode != 0:
         await heroku.edit(
             '**An error was detected while running subprocess**\n'
