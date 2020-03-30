@@ -63,7 +63,6 @@ from asyncio.subprocess import PIPE as asyncPIPE
 from platform import python_version, uname
 from shutil import which
 from os import remove
-import ruby
 from telethon import version
 from userbot import CMD_HELP, ALIVE_NAME
 from userbot.events import register
