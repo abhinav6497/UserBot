@@ -83,7 +83,7 @@ async def heroku_manager(manager):
     result = await asyncrunapp_run(f'heroku --source app --dyno api --{HEROKU_APP_NAME}', manager)
     if result != 0:
         return
-    hours_remaining = result[0]
+    hours_remaining = result
     await manager.edit("`" + hours_remaining + "`")
     return
 
