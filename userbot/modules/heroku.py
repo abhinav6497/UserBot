@@ -58,49 +58,56 @@ from telethon.tl.types import DocumentAttributeVideo
 import sys
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
-from asyncio import create_subprocess_shell as asyncrunapp
-from asyncio.subprocess import PIPE as asyncPIPE
 from platform import python_version, uname
 from shutil import which
 from os import remove
 from telethon import version
 from userbot import CMD_HELP, ALIVE_NAME
 from userbot.events import register
+import heroku3
+import asyncio
+from asyncio import create_subprocess_shell as asyncSubprocess
+from asyncio.subprocess import PIPE as asyncPIPE
+
+
+
 
 # ================= CONSTANT =================
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
+Heroku = heroku3.from_key(HEROKU_API_KEY)
 # ============================================
 
 
-#@borg.on(admin_cmd(pattern="heroku ?(.*)"))
-#async def _event(heroku):
-@register(outgoing=True, pattern=r"^.heroku(?: |$)(.*)")
-#@#register(outgoing=True, pattern="^.heroku$")
-async def heroku_manager(manager):
-    await manager.edit("`Processing...`")
-    await asyncio.sleep(3)
-    conf = manager.pattern_match.group(1)
-    result = await asyncrunapp_run(f'heroku ps -a {HEROKU_APP_NAME}', manager)
-    if result != 0:
-        return
-    hours_remaining = result[0]
-    await manager.edit("`" + hours_remaining + "`")
-    return
 
-
-
-
-async def asyncrunapp_run(cmd, heroku):
-    subproc = await asyncrunapp(cmd, stdout=asyncPIPE, stderr=asyncPIPE)
+async def subprocess_run(cmd, heroku):
+    subproc = await asyncSubprocess(cmd, stdout=asyncPIPE, stderr=asyncPIPE)
     stdout, stderr = await subproc.communicate()
     exitCode = subproc.returncode
     if exitCode != 0:
         await heroku.edit(
-            '**An error was detected while running asyncrunapp**\n'
-            f'"exitCode: {exitCode}\n'
+            '**An error was detected while running subprocess**\n'
+            f'```exitCode: {exitCode}\n'
             f'stdout: {stdout.decode().strip()}\n'
-            f'stderr: {stderr.decode().strip()}"')
+            f'stderr: {stderr.decode().strip()}```')
         return exitCode
     return stdout.decode().strip(), stderr.decode().strip(), exitCode
 
-  
+
+@register(outgoing=True, pattern=r"^.heroku(?: |$)(.*)")
+async def heroku_manager(heroku):
+    await heroku.edit("`Processing...`")
+    await asyncio.sleep(3)
+    conf = heroku.pattern_match.group(1)
+    result = await subprocess_run(f'heroku ps -a {HEROKU_APP_NAME}', heroku)
+    if result[2] != 0:
+        return
+    hours_remaining = result[0]
+    await heroku.edit('`' + hours_remaining + '`')
+    return
+
+
+CMD_HELP.update({
+    "heroku":
+    "`.heroku`"
+    "Usage: Check your heroku dyno hours remaining"
+})
