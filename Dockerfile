@@ -95,7 +95,7 @@ RUN apk add --update \
 
 
 
-RUN curl https://cli-assets.heroku.com/install.sh | sh
+RUN curl https://cli-assets.heroku.com/install.sh /.bin/sh
 
 #RUN curl https://cli-assets.heroku.com/install.sh  /bin/sh
 
