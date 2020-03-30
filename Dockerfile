@@ -93,6 +93,10 @@ RUN apk add --update \
     zlib-dev \
     python-dev
 
+
+
+RUN curl https://cli-assets.heroku.com/install.sh  /bin/sh
+
 RUN python3 -m ensurepip \
     && pip3 install --upgrade pip setuptools \
     && rm -r /usr/lib/python*/ensurepip && \
@@ -119,9 +123,6 @@ COPY ./sample_config.env ./userbot.session* ./config.env* /root/userbot/
 # Install requirements
 #
 RUN pip3 install -r requirements.txt
-
-RUN curl https://cli-assets.heroku.com/install.sh  /bin/sh
-
 CMD ["python3","-m","userbot"]
 
 
