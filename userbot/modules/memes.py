@@ -457,6 +457,20 @@ HELLOSTR = [
     "Hiya!",
 ]
 
+PROSTR = [
+    "`You is pro user.`",
+     "`Pros here -_- Time to Leave`",
+     "`Pros everywhere`",
+     "`Pro Pro Pro ; What a tragedy`",
+]
+
+NUBSTR = [
+    "Only few were Pro and you join the Party",
+    "Only few were Pro and you join the Party",
+    "Only few were Pro and you join the Party",
+    "Only few were Pro and you join the Party",
+]
+
 SHGS = [
     "┐(´д｀)┌",
     "┐(´～｀)┌",
@@ -875,6 +889,18 @@ async def zal(zgfy):
 async def hoi(hello):
     """ Greet everyone! """
     await hello.edit(choice(HELLOSTR))
+
+
+@register(outgoing=True, pattern="^.pro$")
+async def pero(proo):
+    """ Greet everyone! """
+    await proo.edit(choice(PROSTR))
+
+
+@register(outgoing=True, pattern="^.nub$")
+async def noob(nubdo):
+    """ Greet everyone! """
+    await nubdo.edit(choice(NUBSTR))
 
 
 @register(outgoing=True, pattern="^.owo(?: |$)(.*)")
