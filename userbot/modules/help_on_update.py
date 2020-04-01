@@ -19,7 +19,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 @register(outgoing=True, pattern="^.useit$")
 async def usit(e):
     await e.edit(
-        f"Here's something for {DEFAULTUSER} to use it for help_on_update on OpenUserBot:\n"
+        f"Here's something for {DEFAULTUSER} to use it for help_on_update on **OpenUserBot**:\n"
         "\n[Windows Method](https://telegra.ph/How-to-keep-repo-updated-while-keeping-your-changes-through-windows-cmd-method-04-01)"
         "\n[Termux Method](https://telegra.ph/How-to-keep-OpenUserBot-repo-updated-while-keeping-your-changes-through-Termux-method-04-01)"
         "\n[Kali Linux Method](https://telegra.ph/How-to-keep-OpenUserBot-repo-updated-while-keeping-your-changes-through-Termux-method-04-01)"
