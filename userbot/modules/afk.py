@@ -166,7 +166,7 @@ async def mention_afk(mention):
                     await mention.reply(f"**I'm AFK right now. (Since {afk_since}).**\
                         \nReason: `{AFKREASON}`")
                 else:
-                    await mention.reply(str(choice(AFKSTR))(Since {afk_since}))
+                    await mention.reply(str(choice(AFKSTR)))
                 USERS.update({mention.sender_id: 1})
                 COUNT_MSG = COUNT_MSG + 1
             elif mention.sender_id in USERS:
@@ -175,7 +175,7 @@ async def mention_afk(mention):
                         await mention.reply(f"**I'm still AFK. (Since {afk_since}).**\
                             \nReason: `{AFKREASON}`")
                     else:
-                        await mention.reply(str(choice(AFKSTR)))(Since {afk_since})
+                        await mention.reply(str(choice(AFKSTR)))
                     USERS[mention.sender_id] = USERS[mention.sender_id] + 1
                     COUNT_MSG = COUNT_MSG + 1
                 else:
@@ -242,7 +242,7 @@ async def afk_on_pm(sender):
                     await sender.reply(f"**I'm AFK right now. (Since {afk_since}).**\
                         \nReason: `{AFKREASON}`")
                 else:
-                    await sender.reply(str(choice(AFKSTR)))(Since {afk_since})
+                    await sender.reply(str(choice(AFKSTR)))
                 USERS.update({sender.sender_id: 1})
                 COUNT_MSG = COUNT_MSG + 1
             elif apprv and sender.sender_id in USERS:
@@ -251,7 +251,7 @@ async def afk_on_pm(sender):
                         await sender.reply(f"**I'm still AFK. (Since {afk_since}).**\
                             \nReason: `{AFKREASON}`")
                     else:
-                        await sender.reply(str(choice(AFKSTR)))(Since {afk_since})
+                        await sender.reply(str(choice(AFKSTR)))
                     USERS[sender.sender_id] = USERS[sender.sender_id] + 1
                     COUNT_MSG = COUNT_MSG + 1
                 else:
