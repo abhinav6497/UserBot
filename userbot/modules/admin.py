@@ -967,6 +967,10 @@ CMD_HELP.update({
 \nUsage: Retrieves a list of admins in the chat.\
 \n\n.bots\
 \nUsage: Retrieves a list of bots in the chat.\
+\n\n.pin <reply/tag>\
+\nUsage: pins the replied/tagged message on the top the chat silently.\
+\n\n.cpin <reply/tag>\
+\nUsage: pins the replied/tagged message on the top the chat LOUDLY.\
 \n\n.users or .users <name of member>\
 \nUsage: Retrieves all (or queried) users in the chat.\
 \n\n.setgppic <reply to image>\
