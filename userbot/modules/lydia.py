@@ -108,5 +108,7 @@ CMD_HELP.update({
 \n\n.remcf <username/reply>\
 \nUsage: remove's lydia auto chat request in the chat.\
 \n\n.repcf <username/reply>\
-\nUsage: starts lydia repling to perticular person in the chat."
+\nUsage: starts lydia repling to perticular person in the chat.\
+\n\n
+\n Note:  get your value from https://coffeehouse.intellivoid.info/dashboard."
 })
