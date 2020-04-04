@@ -18,7 +18,8 @@ Heroku = heroku3.from_key(HEROKU_API_KEY)
 heroku_api = "https://api.heroku.com"
 
 
-@register(outgoing=True, pattern=r"^.(set|get|del) var(?: |$)(.*)(?: |$)")
+#@register(outgoing=True, pattern=r"^.(set|get|del) var(?: |$)(.*)(?: |$)")
+@register(outgoing=True, pattern=r"^.(set|get|del) var(?: |$)(.*)")
 async def variable(var):
     """
         Manage most of ConfigVars setting, set new var, get current var,
