@@ -102,13 +102,13 @@ async def dyno_usage(dyno):
                  'AppleWebKit/537.36 (KHTML, like Gecko) '
                  'Chrome/80.0.3987.149 Mobile Safari/537.36'
                  )
-    user_id = Heroku.account().id
+    u_id = Heroku.account().id
     headers = {
      'User-Agent': useragent,
      'Authorization': f'Bearer {HEROKU_API_KEY}',
      'Accept': 'application/vnd.heroku+json; version=3.account-quotas',
     }
-    path = "/accounts/" + user_id + "/actions/get-quota"
+    path = "/accounts/" + u_id + "/actions/get-quota"
     r = requests.get(heroku_api + path, headers=headers)
     if r.status_code != 200:
         return await dyno.edit("`Error: something bad happened`\n\n"
