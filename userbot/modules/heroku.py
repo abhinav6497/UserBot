@@ -91,7 +91,8 @@ async def variable(var):
             return await var.edit(f"**{val}**  `is not exists`")
 
 
-@register(outgoing=True, pattern=r"^.usage(?: |$)")
+#@register(outgoing=True, pattern=r"^.usage(?: |$)")
+@register(outgoing=True, pattern=r"^.usage(?: |$)(.*)")
 async def dyno_usage(dyno):
     """
         Get your account Dyno Usage
