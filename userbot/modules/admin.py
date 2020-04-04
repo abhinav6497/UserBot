@@ -8,7 +8,9 @@ Userbot module to help you manage a group
 
 from asyncio import sleep
 from os import remove
-
+from telethon import events
+from telethon.tl import functions, types
+from platform import python_version, uname
 from telethon.errors import (BadRequestError, ChatAdminRequiredError,
                              ImageProcessFailedError, PhotoCropSizeSmallError,
                              UserAdminInvalidError)
@@ -656,7 +658,31 @@ async def pin(msg):
             f"CHAT: {msg.chat.title}(`{msg.chat_id}`)\n"
             f"LOUD: {not is_silent}")
 
+@register(outgoing=True, pattern="^.cpin(?: |$)(.*)")
+async def _(event):
+    if event.fwd_from:
+        return
+    silent = True
+    input_str = event.pattern_match.group(1)
+    if input_str:
+        silent = False
+    if event.message.reply_to_msg_id is not None:
+        message_id = event.message.reply_to_msg_id
+        try:
+            await bot(functions.messages.UpdatePinnedMessageRequest(
+                event.chat_id,
+                message_id,
+                silent
+            ))
+        except Exception as e:
+            await event.edit(str(e))
+        else:
+            await event.delete()
+    else:
+        await event.edit("Reply to a message to pin the message in this Channel.")
 
+
+        
 @register(outgoing=True, pattern="^.kick(?: |$)(.*)")
 async def kick(usr):
     """ For .kick command, kicks the replied/tagged person from the group. """
