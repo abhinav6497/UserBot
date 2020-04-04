@@ -9,14 +9,16 @@ import asyncio
 import os
 import requests
 import math
-
-from userbot import CMD_HELP, HEROKU_APP_NAME, HEROKU_API_KEY
+from platform import python_version, uname
+from userbot import CMD_HELP, HEROKU_APP_NAME, HEROKU_API_KEY, ALIVE_NAME
 from userbot.events import register
 from userbot.prettyjson import prettyjson
 
+# ================= CONSTANT =================
 Heroku = heroku3.from_key(HEROKU_API_KEY)
 heroku_api = "https://api.heroku.com"
-
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
+# ================= CONSTANT =================
 
 #@register(outgoing=True, pattern=r"^.(set|get|del) var(?: |$)(.*)(?: |$)")
 @register(outgoing=True, pattern=r"^.(set|get|del) var(?: |$)(.*)")
@@ -140,7 +142,7 @@ async def dyno_usage(dyno):
     await asyncio.sleep(1.5)
 
     return await dyno.edit("**Dyno Usage**:\n\n"
-                           f" -> `Dyno usage for`  **{HEROKU_APP_NAME}**:\n"
+                           f" -> `Dyno usage for`  **[{DEFAULTUSER}]({HEROKU_APP_NAME})**:\n"
                            f"     •  `{AppHours}`**h**  `{AppMinutes}`**m**  "
                            f"**|**  [`{AppPercentage}`**%**]"
                            "\n"
