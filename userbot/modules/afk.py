@@ -54,7 +54,7 @@ USER_AFK = {}
 afk_time = None
 afk_start = {}
 
-AFKSK = (str(random(AFKSTR)))
+AFKSK = str(choice(AFKSTR))
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
 # =================================================================
