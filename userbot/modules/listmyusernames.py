@@ -58,7 +58,8 @@ async def userid(event):
 
 CMD_HELP.update({
    "listmyusernames":
-    "-listmyusernames \
+  "\ndo this in your private group for security purpose.\
+   \n-listmyusernames \
 \nUsage: Provides all titles according to the usernames reserved by you.\
   -listmychatids \
 \nUsage: Provides all Chat IDs reserved by you."
