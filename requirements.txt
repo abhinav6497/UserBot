@@ -48,3 +48,4 @@ youtube-dl>=2019.9.28
 PyGithub
 bs4
 covid
+base
