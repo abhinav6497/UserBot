@@ -11,11 +11,12 @@ from datetime import datetime
 import time
 from random import choice, randint
 from asyncio import sleep
+from platform import python_version, uname
 
 from telethon.events import StopPropagation
 
 from userbot import (AFKREASON, COUNT_MSG, CMD_HELP, ISAFK, BOTLOG,
-                     BOTLOG_CHATID, USERS, PM_AUTO_BAN)
+                     BOTLOG_CHATID, USERS, PM_AUTO_BAN, ALIVE_NAME)
 from userbot.events import register
 
 # ========================= CONSTANTS ============================
@@ -52,6 +53,9 @@ global afk_end
 USER_AFK = {}
 afk_time = None
 afk_start = {}
+
+AFKSK = (str(choice(AFKSTR)))
+DEFAULTUSER = Config.ALIVE_NAME if Config.ALIVE_NAME else uname().node
 
 # =================================================================
 @register(outgoing=True, pattern="^.afk(?: |$)(.*)", disable_errors=True)
@@ -164,19 +168,19 @@ async def mention_afk(mention):
                 afk_since = f"`{int(seconds)}s` **ago**"
             if mention.sender_id not in USERS:
                 if AFKREASON:
-                    await mention.reply(f"**I'm AFK right now. (Since {afk_since}).**\
-                        \nReason: `{AFKREASON}`")
+                    await mention.reply(f"My Master {DEFAULTUSER} Is **afk since** {afk_since}.**\
+                        \n**Because my King is** `{AFKREASON}`")
                 else:
-                    await mention.reply(str(choice(AFKSTR)))
+                    await mention.reply(f"My King 👑 {DEFAULTUSER} 👑 is **afk Since** {afk_since}.\n and My King has left a word for you only: **{AFKSK}** "
                 USERS.update({mention.sender_id: 1})
                 COUNT_MSG = COUNT_MSG + 1
             elif mention.sender_id in USERS:
                 if USERS[mention.sender_id] % randint(2, 4) == 0:
                     if AFKREASON:
-                        await mention.reply(f"**I'm still AFK. (Since {afk_since}).**\
-                            \nReason: `{AFKREASON}`")
+                        await mention.reply(f"My Master {DEFAULTUSER} Is **afk since** {afk_since}).**\
+                            \n**Because my King is** `{AFKREASON}`")
                     else:
-                        await mention.reply(str(choice(AFKSTR)))
+                        await mention.reply(f"My King 👑 {DEFAULTUSER} 👑 is **afk Since** {afk_since}.\n and My King has left a word for you only: **{AFKSK}** "
                     USERS[mention.sender_id] = USERS[mention.sender_id] + 1
                     COUNT_MSG = COUNT_MSG + 1
                 else:
@@ -240,19 +244,19 @@ async def afk_on_pm(sender):
                 afk_since = f"`{int(seconds)}s` **ago**"
             if sender.sender_id not in USERS:
                 if AFKREASON:
-                    await sender.reply(f"**I'm AFK right now. (Since {afk_since}).**\
-                        \nReason: `{AFKREASON}`")
+                    await sender.reply(f"My Master {DEFAULTUSER} Is **afk since** {afk_since}).**\
+                        \n**Because my King is** `{AFKREASON}`")
                 else:
-                    await sender.reply(str(choice(AFKSTR)))
+                    await sender.replyf("My King 👑 {DEFAULTUSER} 👑 is **afk Since** {afk_since}.\n and My King has left a word for you only: **{AFKSK}** "
                 USERS.update({sender.sender_id: 1})
                 COUNT_MSG = COUNT_MSG + 1
             elif apprv and sender.sender_id in USERS:
                 if USERS[sender.sender_id] % randint(2, 4) == 0:
                     if AFKREASON:
-                        await sender.reply(f"**I'm still AFK. (Since {afk_since}).**\
-                            \nReason: `{AFKREASON}`")
+                        await sender.reply(f"My Master {DEFAULTUSER} Is **afk since** {afk_since}).**\
+                            \n**Because my King is** `{AFKREASON}`")
                     else:
-                        await sender.reply(str(choice(AFKSTR)))
+                        await sender.reply(f"My King 👑 {DEFAULTUSER} 👑 is **afk Since** {afk_since}.\n and My King has left a word for you only: **{AFKSK}** "
                     USERS[sender.sender_id] = USERS[sender.sender_id] + 1
                     COUNT_MSG = COUNT_MSG + 1
                 else:
