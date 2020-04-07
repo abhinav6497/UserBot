@@ -41,8 +41,8 @@ RUN apk add --no-cache=true --update \
     pv \
     jq \
     wget \
-  #  python \
-  #  python-dev \
+    python \
+    python-dev \
     python3 \
     python3-dev \
     readline-dev \
@@ -53,7 +53,7 @@ RUN apk add --no-cache=true --update \
     chromium \
     chromium-chromedriver \
     zlib-dev 
-    # jpeg 
+    jpeg 
 
 
 
