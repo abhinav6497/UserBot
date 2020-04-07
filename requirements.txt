@@ -50,7 +50,6 @@ covid
 base
 pip>=9.0.1
 PyAudio>=0.2.9
-requests>=2.11.1
 setuptools>=28.8.0
 SpeechRecognition>=3.4.6
 wheel>=0.30.0a0
