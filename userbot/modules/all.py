@@ -22,12 +22,12 @@ from userbot.modules.admin import get_user_from_event
 # @borg.on(events.NewMessage(pattern=r"\.all", outgoing=True))
 #@borg.on(admin_cmd("all"))
 @register(outgoing=True, pattern="^.all$")
-async def all(e):
-    if e.fwd_from:
+async def all(event):
+    if event.fwd_from:
         return
-    await e.delete()
+    await event.delete()
     mentions = "@all"
-    chat = await e.get_input_chat()
+    chat = await event.get_input_chat()
     async for x in bot.iter_participants(chat, 100):
         mentions += f"[\u2063](tg://user?id={x.id})"
     await bot.send_message(chat, mentions, reply_to=event.message.reply_to_msg_id)
