@@ -4,7 +4,20 @@
 """A Plugin to tagall in the chat for @UniBorg and cmd is `.all`"""
 
 from telethon import events
-from uniborg.util import admin_cmd
+from asyncio import sleep
+from random import choice, getrandbits, randint
+from re import sub
+import time
+
+from collections import deque
+
+import requests
+
+from cowpy import cow
+
+from userbot import CMD_HELP
+from userbot.events import register
+from userbot.modules.admin import get_user_from_event
 
 # @borg.on(events.NewMessage(pattern=r"\.all", outgoing=True))
 #@borg.on(admin_cmd("all"))
