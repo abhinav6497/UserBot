@@ -32,9 +32,12 @@ async def all(event):
         mentions += f"[\u2063](tg://user?id={x.id})"
     await bot.send_message(chat, mentions, reply_to=event.message.reply_to_msg_id)
 
-
- CMD_HELP.update({
+    
+    
+CMD_HELP.update({
     "all":
     ".all\
-\nUsage: A Plugin to tagall in the chat \"
-})
+\nUsage: A Plugin to tagall in the chat."
+})    
+
+ 
