@@ -73,14 +73,14 @@ async def carbon_api(e):
     url = CARBON.format(code=code, lang=CARBONLANG)
     chrome_options = Options()
     chrome_options.add_argument("--headless")
-    chrome_options.binary_location = Config.GOOGLE_CHROME_BIN
+    chrome_options.binary_location = GOOGLE_CHROME_BIN
     chrome_options.add_argument("--window-size=1920x1080")
     chrome_options.add_argument("--disable-dev-shm-usage")
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-gpu")
     prefs = {'download.default_directory': './'}
     chrome_options.add_experimental_option('prefs', prefs)
-    driver = webdriver.Chrome(executable_path=Config.CHROME_DRIVER,
+    driver = webdriver.Chrome(executable_path=CHROME_DRIVER,
                               options=chrome_options)
     driver.get(url)
     await e.edit("`Processing..\n50%`")
