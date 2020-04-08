@@ -56,7 +56,7 @@ async def setlang(prog):
 
 @register(outgoing=True, pattern="^.carbon")
 async def carbon_api(e):
-    """ A Wrapper for carbon.now.sh """
+  """ A Wrapper for carbon.now.sh """
     await e.edit("`Processing..`")
     CARBON = 'https://carbon.now.sh/?l={lang}&code={code}'
     global CARBONLANG
@@ -73,14 +73,14 @@ async def carbon_api(e):
     url = CARBON.format(code=code, lang=CARBONLANG)
     chrome_options = Options()
     chrome_options.add_argument("--headless")
-    chrome_options.binary_location = GOOGLE_CHROME_BIN
+    chrome_options.binary_location = Config.GOOGLE_CHROME_BIN
     chrome_options.add_argument("--window-size=1920x1080")
     chrome_options.add_argument("--disable-dev-shm-usage")
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-gpu")
     prefs = {'download.default_directory': './'}
     chrome_options.add_experimental_option('prefs', prefs)
-    driver = webdriver.Chrome(executable_path=CHROME_DRIVER,
+    driver = webdriver.Chrome(executable_path=Config.CHROME_DRIVER,
                               options=chrome_options)
     driver.get(url)
     await e.edit("`Processing..\n50%`")
@@ -101,7 +101,7 @@ async def carbon_api(e):
     await e.edit("`Processing..\n75%`")
     # Waiting for downloading
     while not os.path.isfile("./carbon.png"):
-        await sleep(0.5)
+        await asyncio.sleep(0.5)
     await e.edit("`Processing..\n100%`")
     file = './carbon.png'
     await e.edit("`Uploading..`")
@@ -119,7 +119,7 @@ async def carbon_api(e):
     # Removing carbon.png after uploading
     await e.delete()  # Deleting msg
 
-
+    
 @register(outgoing=True, pattern="^.img (.*)")
 async def img_sampler(event):
     """ For .img command, search and return images matching the query. """
