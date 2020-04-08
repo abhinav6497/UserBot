@@ -55,10 +55,9 @@ async def setlang(prog):
     CARBONLANG = prog.pattern_match.group(1)
     await prog.edit(f"Language for carbon.now.sh set to {CARBONLANG}")
 
-
 @register(outgoing=True, pattern="^.carbon")
 async def carbon_api(e):
- """ A Wrapper for carbon.now.sh """
+    """ A Wrapper for carbon.now.sh """
     await e.edit("`Processing..`")
     CARBON = 'https://carbon.now.sh/?l={lang}&code={code}'
     global CARBONLANG
@@ -103,7 +102,7 @@ async def carbon_api(e):
     await e.edit("`Processing..\n75%`")
     # Waiting for downloading
     while not os.path.isfile("./carbon.png"):
-        await asyncio.sleep(0.5)
+        await sleep(0.5)
     await e.edit("`Processing..\n100%`")
     file = './carbon.png'
     await e.edit("`Uploading..`")
@@ -120,7 +119,7 @@ async def carbon_api(e):
     driver.quit()
     # Removing carbon.png after uploading
     await e.delete()  # Deleting msg
-
+    
     
 @register(outgoing=True, pattern="^.img (.*)")
 async def img_sampler(event):
