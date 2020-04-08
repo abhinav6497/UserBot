@@ -103,7 +103,7 @@ async def carbon_api(e):
     await e.edit("`Processing..\n75%`")
     # Waiting for downloading
     while not os.path.isfile("./carbon.png"):
-        await asyncio.sleep(0.5)
+        await sleep(0.5)
     await e.edit("`Processing..\n100%`")
     file = './carbon.png'
     await e.edit("`Uploading..`")
