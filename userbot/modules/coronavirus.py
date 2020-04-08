@@ -7,7 +7,7 @@ from userbot.events import register
 
 #@borg.on(admin_cmd(pattern="coronavirus (.*)"))
 #async def _(event):
-@register(outgoing=True, pattern="^.cod19$")
+@register(outgoing=True, pattern="^.cod19 (.*)")
 async def cv(event):
     covid = Covid()
     data = covid.get_data()
