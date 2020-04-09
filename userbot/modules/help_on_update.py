@@ -16,7 +16,7 @@ from userbot.events import register
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
 
-@register(outgoing=True, pattern="^.useit$")
+@register(outgoing=True, pattern="^.useitoub$")
 async def usit(e):
     await e.edit(
         f"Here's something for {DEFAULTUSER} to use it for help_on_update on **OpenUserBot**:\n"
@@ -28,7 +28,7 @@ async def usit(e):
     
     
 CMD_HELP.update({
-    "useit":
-    ".useit\
+    "useitoub":
+    ".useitoub\
 \nUsage: Provide links to update repo guides while you keep your changes on the floor."
 })
