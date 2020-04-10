@@ -55,7 +55,7 @@ RUN apk add --no-cache=true --update \
     chromium \
     chromium-chromedriver \
     zlib-dev \
-    jpeg \
+    jpeg 
     #
 
 RUN curl https://cli-assets.heroku.com/install.sh
