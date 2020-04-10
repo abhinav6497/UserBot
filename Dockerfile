@@ -52,6 +52,8 @@ RUN apk add --no-cache=true --update \
     sqlite-dev \
     libc-dev \
     sudo \
+    selenium \
+    selenium-webdriver \
     chromium \
     chromium-chromedriver \
     zlib-dev \
