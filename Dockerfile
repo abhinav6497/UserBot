@@ -53,7 +53,6 @@ RUN apk add --no-cache=true --update \
     libc-dev \
     sudo \
     selenium \
-    selenium-webdriver \
     chromium \
     chromium-chromedriver \
     zlib-dev \
