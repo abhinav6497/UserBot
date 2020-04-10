@@ -50,6 +50,7 @@ from datetime import datetime
 CARBONLANG = "auto"
 TTS_LANG = "en"
 TRT_LANG = "en"
+TEMP_DOWNLOAD_DIRECTORY = "/root/userbot/.bin"
 
 
 @register(outgoing=True, pattern="^.crblang (.*)")
