@@ -307,8 +307,8 @@ async def text_to_speech(query):
         return
     text = text.strip()
     lan = lan.strip()
-    if not os.path.isdir(/root/downloads/):
-        os.makedirs(/root/downloads/)
+    if not os.path.isdir('\root\downloads\'):
+        os.makedirs('\root\downloads\')
     required_file_name = /root/downloads/ + "voice.ogg"
     try:
         #https://github.com/SpEcHiDe/UniBorg/commit/17f8682d5d2df7f3921f50271b5b6722c80f4106
