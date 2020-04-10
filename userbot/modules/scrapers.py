@@ -15,11 +15,10 @@ from time import sleep
 from html import unescape
 from re import findall
 from selenium import webdriver
-from urllib.parse import quote_plus
-from urllib.error import HTTPError
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.chrome.options import Options
-from selenium import webdriver
+from urllib.parse import quote_plus
+from urllib.error import HTTPError
 from telethon import events
 from wikipedia import summary
 from wikipedia.exceptions import DisambiguationError, PageError
