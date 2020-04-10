@@ -3,6 +3,7 @@
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
 #
+#
 """ Userbot module containing various scrapers. """
 
 import os
@@ -61,6 +62,7 @@ async def setlang(prog):
 @register(outgoing=True, pattern="^.carbon")
 async def carbon_api(e):
     """ A Wrapper for carbon.now.sh """
+    if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
     await e.edit("`Processing..`")
     CARBON = 'https://carbon.now.sh/?l={lang}&code={code}'
     global CARBONLANG
