@@ -19,7 +19,7 @@ from urllib.parse import quote_plus
 from urllib.error import HTTPError
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.chrome.options import Options
-#from selenium import webdriver
+from selenium import webdriver
 from telethon import events
 from wikipedia import summary
 from wikipedia.exceptions import DisambiguationError, PageError
@@ -307,9 +307,9 @@ async def text_to_speech(query):
         return
     text = text.strip()
     lan = lan.strip()
-    if not os.path.isdir(Var.TEMP_DOWNLOAD_DIRECTORY):
-        os.makedirs(VAR.TEMP_DOWNLOAD_DIRECTORY)
-    required_file_name = VAR.TEMP_DOWNLOAD_DIRECTORY + "voice.ogg"
+    if not os.path.isdir(Config.TEMP_DOWNLOAD_DIRECTORY):
+        os.makedirs(Config.TEMP_DOWNLOAD_DIRECTORY)
+    required_file_name = Config.TEMP_DOWNLOAD_DIRECTORY + "voice.ogg"
     try:
         #https://github.com/SpEcHiDe/UniBorg/commit/17f8682d5d2df7f3921f50271b5b6722c80f4106
         tts = gTTS(text, lang=lan)
