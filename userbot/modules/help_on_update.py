@@ -27,8 +27,8 @@ async def usit(e):
         "\n[Special - Note](https://telegra.ph/Special-Note-11-02)")
     
 @register(outgoing=True, pattern="^.varoub$")
-async def var(e):
-    await e.edit(
+async def var(m):
+    await m.edit(
         f"Here's a list of VARS for {DEFAULTUSER} on **OpenUserBot**:\n"
         "\n[HEROKU VARS](https://raw.githubusercontent.com/mkaraniya/OpenUserBot/sql-extended/bin/vars%20for%20oub.txt)")
     
