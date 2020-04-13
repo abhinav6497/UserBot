@@ -464,7 +464,7 @@ async def carbon_api(e):
    await e.client.send_file(
          e.chat_id,
          file,
-         caption="RGB Karbon by [@PhycoNinja13b](https://github.com/Phyco-Ninja/UniNinja)",
+         caption="RGB Karbon",
          force_document=True,
          reply_to=e.message.reply_to_msg_id,
          )
@@ -524,7 +524,7 @@ async def carbon_api(e):
    await e.client.send_file(
          e.chat_id,
          file,
-         caption="RGB Karbon 2.0 by [@PhycoNinja13b](https://github.com/Phyco-Ninja/UniNinja)",
+         caption="RGB Karbon",
          force_document=False,
          reply_to=e.message.reply_to_msg_id,
          )
@@ -535,41 +535,41 @@ async def carbon_api(e):
     
     
 CMD_HELP.update({
-    'carbon':
-    '.carbon <text> [or reply]\
-        \nUsage: Beautify your code using carbon.now.sh\nUse .crblang <text> to set language for your code.'
+    'karbon1':
+    '.karbon1 <text> [or reply]\
+        \nUsage: Beautify your text'
 })
 
     
 CMD_HELP.update({
-    'carbon':
-    '.carbon <text> [or reply]\
-        \nUsage: Beautify your code using carbon.now.sh\nUse .crblang <text> to set language for your code.'
+    'karbon2':
+    '.karbon2 <text> [or reply]\
+        \nUsage: Beautify your TXT.'
 })
 
     
 CMD_HELP.update({
-    'carbon':
-    '.carbon <text> [or reply]\
-        \nUsage: Beautify your code using carbon.now.sh\nUse .crblang <text> to set language for your code.'
+    'karbon3':
+    '.karbon3 <text> [or reply]\
+        \nUsage: Beautify your text.'
 })
 CMD_HELP.update({
-    'carbon':
-    '.carbon <text> [or reply]\
-        \nUsage: Beautify your code using carbon.now.sh\nUse .crblang <text> to set language for your code.'
+    'karbon4':
+    '.karbon4 <text> [or reply]\
+        \nUsage: Beautify your text.'
 })
 CMD_HELP.update({
-    'carbon':
-    '.carbon <text> [or reply]\
-        \nUsage: Beautify your code using carbon.now.sh\nUse .crblang <text> to set language for your code.'
+    'karbon5':
+    '.karbon5 <text> [or reply]\
+        \nUsage: Beautify your text.'
 })
 CMD_HELP.update({
-    'carbon':
-    '.carbon <text> [or reply]\
-        \nUsage: Beautify your code using carbon.now.sh\nUse .crblang <text> to set language for your code.'
+    'karbonRGB':
+    '.karbonRGB <text> [or reply]\
+        \nUsage: Beautify your text.'
 })
 CMD_HELP.update({
-    'carbon':
-    '.carbon <text> [or reply]\
-        \nUsage: Beautify your code using carbon.now.sh\nUse .crblang <text> to set language for your code.'
+    'karbonRGB2':
+    '.karbonRGB2 <text> [or reply]\
+        \nUsage: Beautify your text.'
 })
