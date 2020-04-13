@@ -380,7 +380,7 @@ async def carbon_api(e):
     driver.quit()
     # Removing carbon.png after uploading
     await e.delete()  # Deleting msg
-    
+ 
 
 @register(outgoing=True, pattern="^.karbonRGB")
 async def carbon_api(e):
@@ -422,7 +422,7 @@ async def carbon_api(e):
  The = THEME[CUNTHE]
 
 
- if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
+ #if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
    """ A Wrapper for carbon.now.sh """
    await e.edit("⬜⬜⬜⬜⬜")
    CARBON = 'https://carbon.now.sh/?bg=rgba({R}%2C{G}%2C{B}%2C1)&t={T}&wt=none&l=auto&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Fira%20Code&fs=14px&lh=152%25&si=false&es=2x&wm=false&code={code}'
@@ -455,13 +455,13 @@ async def carbon_api(e):
 
    driver.find_element_by_xpath("//button[contains(text(),'Export')]").click()
    sleep(5) # this might take a bit.
-   #driver.find_element_by_xpath("//button[contains(text(),'4x')]").click()
+   driver.find_element_by_xpath("//button[contains(text(),'4x')]").click()
    await e.edit("⬛⬛⬛⬜⬜")
-   #driver.find_element_by_xpath("//button[contains(text(),'PNG')]").click()
-   #sleep(5) #Waiting for downloading
+   driver.find_element_by_xpath("//button[contains(text(),'PNG')]").click()
+   sleep(5) #Waiting for downloading
 
    await e.edit("⬛⬛⬛⬛⬛")
-   file = './carbon.png'
+   file = '/root/userbot/.bin/carbon.png'
    await e.edit("✅RGB Karbon Completed, Uploading Karbon✅")
    await e.client.send_file(
         e.chat_id,
@@ -484,7 +484,7 @@ async def carbon_api(e):
  GREEN = random.randint(0,256)
  BLUE = random.randint(0,256)
  OPC = random.random()
- if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
+# if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
    """ A Wrapper for carbon.now.sh """
    await e.edit("⬜⬜⬜⬜⬜")
    CARBON = 'https://carbon.now.sh/?bg=rgba({R}%2C{G}%2C{B}%2C{O})&t=material&wt=none&l=auto&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Fira%20Code&fs=14px&lh=152%25&si=false&es=2x&wm=false&code={code}'
@@ -517,13 +517,13 @@ async def carbon_api(e):
 
    driver.find_element_by_xpath("//button[contains(text(),'Export')]").click()
    sleep(5) # this might take a bit.
-   #driver.find_element_by_xpath("//button[contains(text(),'4x')]").click()
+   driver.find_element_by_xpath("//button[contains(text(),'4x')]").click()
    await e.edit("⬛⬛⬛⬜⬜")
-   #driver.find_element_by_xpath("//button[contains(text(),'PNG')]").click()
-   #sleep(5) #Waiting for downloading
+   driver.find_element_by_xpath("//button[contains(text(),'PNG')]").click()
+   sleep(5) #Waiting for downloading
 
    await e.edit("⬛⬛⬛⬛⬛")
-   file = './carbon.png'
+   file = '/root/userbot/.bin/carbon.png'
    await e.edit("✅RGB Karbon 2.0 Completed, Uploading Karbon✅")
    await e.client.send_file(
         e.chat_id,
