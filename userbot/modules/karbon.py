@@ -448,7 +448,7 @@ async def carbon_api(e):
 
    driver = webdriver.Chrome(executable_path=CHROME_DRIVER, options=chrome_options)
    driver.get(url)
-   download_path = './'
+   download_path = '/root/userbot/.bin/'
    driver.command_executor._commands["send_command"] = ("POST", '/session/$sessionId/chromium/send_command')
    params = {'cmd': 'Page.setDownloadBehavior', 'params': {'behavior': 'allow', 'downloadPath': download_path}}
    command_result = driver.execute("send_command", params)
@@ -464,16 +464,18 @@ async def carbon_api(e):
    file = './carbon.png'
    await e.edit("✅RGB Karbon Completed, Uploading Karbon✅")
    await e.client.send_file(
-         e.chat_id,
-         file,
-         caption="RGB Karbon",
-         force_document=True,
-         reply_to=e.message.reply_to_msg_id,
-         )
+        e.chat_id,
+        file,
+        caption="Made using [Carbon](https://carbon.now.sh/about/),\
+        \na project by [Dawn Labs](https://dawnlabs.io/)",
+        force_document=True,
+        reply_to=e.message.reply_to_msg_id,
+    )
 
-   os.remove('./carbon.png')
-   # Removing carbon.png after uploading
-   await e.delete() # Deleting msg    
+    os.remove('/root/userbot/.bin/carbon.png')
+    driver.quit()
+    # Removing carbon.png after uploading
+    await e.delete()  # Deleting msg
     
     
 @register(outgoing=True, pattern="^.karbonRGB2")
@@ -508,7 +510,7 @@ async def carbon_api(e):
 
    driver = webdriver.Chrome(executable_path=CHROME_DRIVER, options=chrome_options)
    driver.get(url)
-   download_path = './'
+   download_path = '/root/userbot/.bin/'
    driver.command_executor._commands["send_command"] = ("POST", '/session/$sessionId/chromium/send_command')
    params = {'cmd': 'Page.setDownloadBehavior', 'params': {'behavior': 'allow', 'downloadPath': download_path}}
    command_result = driver.execute("send_command", params)
@@ -524,16 +526,18 @@ async def carbon_api(e):
    file = './carbon.png'
    await e.edit("✅RGB Karbon 2.0 Completed, Uploading Karbon✅")
    await e.client.send_file(
-         e.chat_id,
-         file,
-         caption="RGB Karbon",
-         force_document=False,
-         reply_to=e.message.reply_to_msg_id,
-         )
+        e.chat_id,
+        file,
+        caption="Made using [Carbon](https://carbon.now.sh/about/),\
+        \na project by [Dawn Labs](https://dawnlabs.io/)",
+        force_document=True,
+        reply_to=e.message.reply_to_msg_id,
+    )
 
-   os.remove('./carbon.png')
-   # Removing carbon.png after uploading
-   await e.delete() # Deleting msg
+    os.remove('/root/userbot/.bin/carbon.png')
+    driver.quit()
+    # Removing carbon.png after uploading
+    await e.delete()  # Deleting msg
     
     
 CMD_HELP.update({
