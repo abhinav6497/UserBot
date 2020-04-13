@@ -316,7 +316,7 @@ async def carbon_api(e):
     await e.delete()  # Deleting msg
     
 
-@register(outgoing=True, pattern="^.karbon1")
+@register(outgoing=True, pattern="^.karbon5")
 async def carbon_api(e):
     """ A Wrapper for carbon.now.sh """
     await e.edit("`Processing..`")
