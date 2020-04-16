@@ -13,7 +13,7 @@
 
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-"""    Credits to ftg plugins, cmd is .photochat """
+#    Credits to ftg plugins, cmd is .q
 
 import logging
 import requests
@@ -82,11 +82,11 @@ if 1 == 1:
                                           "username_colors": ["#fb6169", "#faa357", "#b48bf2", "#85de85",
                                                               "#62d4e3", "#65bdf3", "#ff5694"],
                                           "default_username_color": "#b48bf2"})
-    #client = borg
+   
     client = bot
 
-    #@borg.on(admin_cmd(pattern="photochat(.*)"))
-    @register(outgoing=True, pattern="^.photochat$")
+    
+    @register(outgoing=True, pattern="^.q$")
     async def quotecmd(message):  # noqa: C901
         """Quote a message.
         Usage: .quote [template]
@@ -250,3 +250,9 @@ def get_markdown(reply):
 
         markdown.append(md_item)
     return markdown
+
+CMD_HELP.update({
+        "quotly": 
+        ".q reply_message. \
+          \nUsage: Enhance ur text to sticker.\n"
+    })
