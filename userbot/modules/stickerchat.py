@@ -77,7 +77,7 @@ if 1 == 1:
         "channel": "Channel"
     }
 
-    config = dict({"api_token": os.environ.get("API_TOKEN"), 
+    config = API_TOKEN, 
                                           "api_url": "http://api.antiddos.systems",
                                           "username_colors": ["#fb6169", "#faa357", "#b48bf2", "#85de85",
                                                               "#62d4e3", "#65bdf3", "#ff5694"],
