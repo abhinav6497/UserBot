@@ -83,7 +83,7 @@ if 1 == 1:
                                                               "#62d4e3", "#65bdf3", "#ff5694"],
                                           "default_username_color": "#b48bf2"})
     #client = borg
-    client = register
+    client = bot
 
     #@borg.on(admin_cmd(pattern="photochat(.*)"))
     @register(outgoing=True, pattern="^.photochat$")
