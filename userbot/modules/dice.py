@@ -14,11 +14,11 @@ from userbot.events import register
 #@borg.on(admin_cmd(pattern="dice ?(.*)"))
 @register(outgoing=True, pattern="^.dice$")
 async def _(event):
+    try:
+        from telethon.tl.types import InputMediaDice
     if event.fwd_from:
         return
-        try:
-            from telethon.tl.types import InputMediaDice
-    input_str = event.pattern_match.group()
+        input_str = event.pattern_match.group(1)
     await event.delete()
     r = await event.reply(file=InputMediaDice())
     if input_str:
