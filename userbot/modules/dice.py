@@ -7,7 +7,7 @@ import telethon.tl.types
 from telethon.tl.types import *
 from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, bot
 from userbot.events import register
-from telethon.tl.types import inputMediaDice as InputMediaDice
+from telethon.tl.types import InputMediaDice
 
 
 
