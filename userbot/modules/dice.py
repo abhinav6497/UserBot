@@ -18,7 +18,7 @@ async def _(event):
         return
         try:
             from telethon.tl.types import InputMediaDice
-    input_str = event.pattern_match.group(1)
+    input_str = event.pattern_match.group()
     await event.delete()
     r = await event.reply(file=InputMediaDice())
     if input_str:
