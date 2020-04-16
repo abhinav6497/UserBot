@@ -37,7 +37,7 @@ async def load_reload(event):
 async def remove(event):
     await event.delete()
     shortname = event.pattern_match["shortname"]
-    if shortname == "_core":
+    if shortname == "useful":
         msg = await event.respond(f"Not removing {shortname}")
     elif shortname in bot._plugins:  # pylint:disable=E0602
         bot.remove_plugin(shortname)  # pylint:disable=E0602
