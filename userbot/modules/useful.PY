@@ -6,20 +6,22 @@ import asyncio
 import traceback
 import os
 from datetime import datetime
-from uniborg import util
+from userbot import CMD_HELP
+from userbot.events import register
 
 
 DELETE_TIMEOUT = 5
 
 
-@borg.on(util.admin_cmd(pattern="load (?P<shortname>\w+)$"))  # pylint:disable=E0602
+#@borg.on(util.admin_cmd(pattern="load (?P<shortname>\w+)$"))       # pylint:disable=E0602
+@register(outgoing=True, pattern=r"^.(\w+)load (.*)")         
 async def load_reload(event):
     await event.delete()
     shortname = event.pattern_match["shortname"]
     try:
-        if shortname in borg._plugins:  # pylint:disable=E0602
-            borg.remove_plugin(shortname)  # pylint:disable=E0602
-        borg.load_plugin(shortname)  # pylint:disable=E0602
+        if shortname in bot._plugins:  # pylint:disable=E0602
+            bot.remove_plugin(shortname)  # pylint:disable=E0602
+        bot.load_plugin(shortname)  # pylint:disable=E0602
         msg = await event.respond(f"Successfully (re)load plugin {shortname}")
         await asyncio.sleep(DELETE_TIMEOUT)
         await msg.delete()
@@ -30,14 +32,15 @@ async def load_reload(event):
         await event.respond(f"Failed to (re)load plugin {shortname}: {e}")
 
 
-@borg.on(util.admin_cmd(pattern="(?:unload|remove) (?P<shortname>\w+)$"))  # pylint:disable=E0602
+#@borg.on(util.admin_cmd(pattern="(?:unload|remove) (?P<shortname>\w+)$"))  # pylint:disable=E0602
+@register(outgoing=True, pattern=r"^.(\w+)unload|remove (.*)")
 async def remove(event):
     await event.delete()
     shortname = event.pattern_match["shortname"]
     if shortname == "_core":
         msg = await event.respond(f"Not removing {shortname}")
-    elif shortname in borg._plugins:  # pylint:disable=E0602
-        borg.remove_plugin(shortname)  # pylint:disable=E0602
+    elif shortname in bot._plugins:  # pylint:disable=E0602
+        bot.remove_plugin(shortname)  # pylint:disable=E0602
         msg = await event.respond(f"Removed plugin {shortname}")
     else:
         msg = await event.respond(f"Plugin is {shortname} is not load...")
@@ -45,13 +48,14 @@ async def remove(event):
     await msg.delete()
 
 
-@borg.on(util.admin_cmd(pattern="send plugin (?P<shortname>\w+)$"))  # pylint:disable=E0602
+#@borg.on(util.admin_cmd(pattern="send plugin (?P<shortname>\w+)$"))  # pylint:disable=E0602
+@register(outgoing=True, pattern=r"^.(\w+)send plugin (?P<shortname>) (.*)") 
 async def send_plug_in(event):
     if event.fwd_from:
         return
     message_id = event.message.id
     input_str = event.pattern_match["shortname"]
-    the_plugin_file = "./stdplugins/{}.py".format(input_str)
+    the_plugin_file = "./userbot/modules/{}.py".format(input_str)
     start = datetime.now()
     await event.client.send_file(  # pylint:disable=E0602
         event.chat_id,
@@ -67,7 +71,8 @@ async def send_plug_in(event):
     await event.delete()
 
 
-@borg.on(util.admin_cmd(pattern="install plugin"))  # pylint:disable=E0602
+#@borg.on(util.admin_cmd(pattern="install plugin"))  # pylint:disable=E0602
+@register(outgoing=True, pattern=r"^.(\w+)install plugin (.*)") 
 async def install_plug_in(event):
     if event.fwd_from:
         return
@@ -75,10 +80,10 @@ async def install_plug_in(event):
         try:
             downloaded_file_name = await event.client.download_media(  # pylint:disable=E0602
                 await event.get_reply_message(),
-                borg._plugin_path  # pylint:disable=E0602
+                bot._plugin_path  # pylint:disable=E0602
             )
             if "(" not in downloaded_file_name:
-                borg.load_plugin_from_file(downloaded_file_name)  # pylint:disable=E0602
+                bot.load_plugin_from_file(downloaded_file_name)  # pylint:disable=E0602
                 await event.edit("Installed Plugin `{}`".format(os.path.basename(downloaded_file_name)))
             else:
                 os.remove(downloaded_file_name)
@@ -88,3 +93,16 @@ async def install_plug_in(event):
             os.remove(downloaded_file_name)
     await asyncio.sleep(DELETE_TIMEOUT)
     await event.delete()
+
+    
+CMD_HELP.update(
+    {"load" : ".load <plugin.py name>\
+    \nUsage: loads a plugin."})
+CMD_HELP.update({"unload" : ".unload <plugin.py name>\
+    \nUsage: unloads a plugin."})
+CMD_HELP.update(
+    {"send plugin": ".send plugin <plugin.py name>\
+    \nUsage: send's a plugin."})
+CMD_HELP.update(
+    {"install": ".install <plugin.py name>\
+    \nUsage: install's a plugin."})
