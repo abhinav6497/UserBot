@@ -380,6 +380,9 @@ async def carbon_api(e):
     driver.quit()
     # Removing carbon.png after uploading
     await e.delete()  # Deleting msg
+    
+
+
  
     
 CMD_HELP.update({
