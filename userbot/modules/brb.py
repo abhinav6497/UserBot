@@ -278,7 +278,7 @@ async def afk_on_pm(sender):
 
 
 CMD_HELP.update({
-    "Brb":
+    "brb":
     "`Brb` [Optional Reason]\
 \nUsage: Brb = Be right back.\nSets you offline.\nReplies to anyone who tags/PM's \
 you telling them that you'll be right back(reason).\n\nSwitches off BRB when you type back anything, anywhere.\
