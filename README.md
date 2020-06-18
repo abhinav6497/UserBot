@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/sahyam2019/oub-remix.svg?branch=sql-extended)](https://travis-ci.com/sahyam2019/oub-remix)
+[![Build Status](https://travis-ci.com/abhinav6497/UserBot.svg?branch=sql-extended)](https://travis-ci.com/abhinav6497/UserBot)
 # Project OpenUserBot Remix
 
 ![logo](https://telegra.ph/file/12fd39f968f0892ae1a7e.jpg)
