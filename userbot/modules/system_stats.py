@@ -133,14 +133,14 @@ async def amireallyalive(alive):
     await alive.edit(
                      
                       
-                     f"`🤖 STATUS: Working Sexy AF ✅` \n"
-                     f"Telethon version:{version.__version__} \n"
-                     f"Python version🐍:{python_version()} \n"
-                     f"`Bot Version🤘: Remix {BOT_VER}` \n"
+                     f"🤖𝔸ℙ𝕌ℕ 𝕀𝔻ℍ𝔸ℝ𝕀ℂℍ ℍ𝔸𝕀🤖 \n"
+                     f"♥️тєℓєтнση νєяѕιση: {version.__version__} \n"
+                     f"🐍ρутнση νєяѕιση: {python_version()} \n" 
+                     f"🤘вσт νєяѕιση: Remix {BOT_VER} \n" 
                      f"------------------------------------ \n"
                      
-                     f"User 👨‍🚀: {DEFAULTUSER} \n"
-                     f"Maintainer 🏄‍♂️: @heyworld"
+                     f"👦🏻υѕєя: {DEFAULTUSER} \n"
+                     f"⚙️мαιηтαιηєя: [𝓐𝓫𝓱𝓲𝓷𝓪𝓿 𝓢𝓱𝓲𝓷𝓭𝓮](t.me/AbhinavShinde)"
                      )
                          
 
