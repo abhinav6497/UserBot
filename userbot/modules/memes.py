@@ -1083,8 +1083,8 @@ async def oof(e):
 
                       
 @register(outgoing=True, pattern="^.oem$")
-async def Oem(e):
-    t = "Oem"
+async def oem(e):
+    t = "oem"
     for j in range(16):
         t = t[:-1] + "em"
         await e.edit(t)
