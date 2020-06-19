@@ -251,7 +251,7 @@ async def blockpm(block):
     else:
         await block.client(BlockRequest(block.chat_id))
         aname = await block.client.get_entity(block.chat_id)
-        await block.edit("`You've been blocked 😡!`")
+        await block.edit("`My master thinks that you're useless person to discuss with.`\n\n`Hence, you've been blocked😡 :) !`")
         name0 = str(aname.first_name)
         uid = block.chat_id
 
