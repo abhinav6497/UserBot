@@ -187,7 +187,7 @@ async def _(event):
             "🔴🔴🔴⬜⬜⬜🔵🔵🔵\n🔴🔴🔴⬜⬜⬜🔵🔵🔵\n🔴🔴🔴⬜⬜⬜🔵🔵🔵",
             "🔵🔵🔵⬜⬜⬜🔴🔴🔴\n🔵🔵🔵⬜⬜⬜🔴🔴🔴\n🔵🔵🔵⬜⬜⬜🔴🔴🔴",
             "🔴🔴🔴⬜⬜⬜🔵🔵🔵\n🔴🔴🔴⬜⬜⬜🔵🔵🔵\n🔴🔴🔴⬜⬜⬜🔵🔵🔵",
-            "OUB **Police is Chasing you now**"
+            "MAHARASHTRA **Police is Chasing you now**"
 
  ]
 
@@ -421,11 +421,11 @@ async def _(event):
         
             "`Scanning OS...`",
             "`Scanning OS......`",
-            "__Current Loaded OS: CrDroid OS__\n\n**To Boot Other OS, Use The Following Trigger:**\n☑️ `.Macos`\n☑️ `.Windows`\n☑️ `.Linux`\n☑️ `.Stock`",
-            "__Current Loaded OS: CrDroid OS__\n\n**To Boot Other OS, Use The Following Trigger:**\n✅ `.Macos`\n☑️ `.Windows`\n☑️ `.Linux`\n☑️ `.Stock`",
-            "__Current Loaded OS: CrDroid OS__\n\n**To Boot Other OS, Use The Following Trigger:**\n✅ `.Macos`\n✅ `.Windows`\n☑️ `.Linux`\n☑️ `.Stock`",
-            "__Current Loaded OS: CrDroid OS__\n\n**To Boot Other OS, Use The Following Trigger:**\n✅ `.Macos`\n✅ `.Windows`\n✅ `.Linux`\n☑️ `.Stock`",
-            "__Current Loaded OS: CrDroid OS__\n\n**To Boot Other OS, Use The Following Trigger:**\n✅ `.Macos`\n✅ `.Windows`\n✅ `.Linux`\n✅ `.Stock`\n\n by @heyworld and others"
+            "__Current Loaded OS: DerpFest OS__\n\n**To Boot Other OS, Use The Following Trigger:**\n☑️ `.Macos`\n☑️ `.Windows`\n☑️ `.Linux`\n☑️ `.Stock`",
+            "__Current Loaded OS: DerpFest OS__\n\n**To Boot Other OS, Use The Following Trigger:**\n✅ `.Macos`\n☑️ `.Windows`\n☑️ `.Linux`\n☑️ `.Stock`",
+            "__Current Loaded OS: DerpFest OS__\n\n**To Boot Other OS, Use The Following Trigger:**\n✅ `.Macos`\n✅ `.Windows`\n☑️ `.Linux`\n☑️ `.Stock`",
+            "__Current Loaded OS: DerpFest OS__\n\n**To Boot Other OS, Use The Following Trigger:**\n✅ `.Macos`\n✅ `.Windows`\n✅ `.Linux`\n☑️ `.Stock`",
+            "__Current Loaded OS: DerpFest OS__\n\n**To Boot Other OS, Use The Following Trigger:**\n✅ `.Macos`\n✅ `.Windows`\n✅ `.Linux`\n✅ `.Stock`\n\n by @AbhinavShinde and others"
  ]
 
         for i in animation_ttl:
@@ -578,7 +578,7 @@ async def _(event):
             "⬜⬜⬜⬜⬜⬜⬜\n⬜⬛⬛⬛⬛⬛⬜\n⬜⬛⬜⬜⬜⬛⬜\n⬜⬛⬜⬛⬜⬛⬜\n⬜⬛⬜⬜⬜⬛⬜\n⬜⬛⬛⬛⬛⬛⬜\n⬜⬜⬜⬜⬜⬜⬜",
             "⬛⬛⬛⬛⬛\n⬛⬜⬜⬜⬛\n⬛⬜⬛⬜⬛\n⬛⬜⬜⬜⬛\n⬛⬛⬛⬛⬛",
             "⬜⬜⬜\n⬜⬛⬜\n⬜⬜⬜",
-            "[👉🔴👈](t.me/heyworld)"
+            "[👉🔴👈](t.me/AbhinavShinde)"
 
  ]
 
