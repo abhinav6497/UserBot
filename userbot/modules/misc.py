@@ -107,7 +107,7 @@ async def bot_support(wannahelp):
 
 @register(outgoing=True, pattern="^.creator$")
 async def creator(e):
-    await e.edit("[Heyworld](https://github.com/sahyam2019)")
+    await e.edit("[Abhinav](https://github.com/abhinav6497)")
 
 
 @register(outgoing=True, pattern="^.readme$")
