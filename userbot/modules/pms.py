@@ -75,7 +75,7 @@ async def permitpm(event):
                 else:
                     COUNT_PM[event.chat_id] = COUNT_PM[event.chat_id] + 1
 
-                if COUNT_PM[event.chat_id] > 2:
+                if COUNT_PM[event.chat_id] > 5:
                     await event.respond(
                         "`You were spamming my pm dude.`\n"
                         "`You have been BLOCKED and reported as SPAM now. JUST FUCK OFF 🖕.`"
