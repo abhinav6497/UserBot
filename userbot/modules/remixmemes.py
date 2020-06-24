@@ -1284,7 +1284,7 @@ async def _(event):
             "What The",
             "What The F",
             "What The F Brah",
-            "What The F Brah\nhttps://telegra.ph//file/f3b760e4a99340d331f9b.jpg"
+            "What The F [Brah](https://telegra.ph/file/a2c5bc4873078f97b198a.mp4)"
         ]
 
         for i in animation_ttl:
