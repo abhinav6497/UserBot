@@ -1557,7 +1557,7 @@ CMD_HELP.update({
 \nUsage: Invoke the feeling of chaos.\
 \n\n`.oem`\
 \nUsage: oeeeem\
-\n\n`.oof`\
+\n\nOof\
 \nUsage: ooooof\
 \n\n`.fp`\
 \nUsage: Facepalm :P\
