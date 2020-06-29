@@ -12,7 +12,7 @@ from shutil import which
 from os import remove
 from telethon import version
 
-from userbot import CMD_HELP, ALIVE_NAME, BOT_VER
+from userbot import CMD_HELP, ALIVE_NAME, BOT_VER, UPSTREAM_REPO_BRANCH, ALIVE_LOGO, bot
 from userbot.events import register
 
 # ================= CONSTANT =================
@@ -129,19 +129,18 @@ async def pipcheck(pip):
 
 @register(outgoing=True, pattern="^.start$")
 async def amireallyalive(alive):
-    """ For .alive command, check if the bot is running.  """
-    await alive.edit(
-                     
-                      
-                     f"🤖𝔸ℙ𝕌ℕ 𝕀𝔻ℍ𝔸ℝ𝕀ℂℍ ℍ𝔸𝕀🤖 \n"
-                     f"♥️тєℓєтнση νєяѕιση: {version.__version__} \n"
-                     f"🐍ρутнση νєяѕιση: {python_version()} \n" 
-                     f"🤘вσт νєяѕιση: Remix {BOT_VER} \n" 
-                     f"------------------------------------ \n"
-                     
-                     f"👦🏻υѕєя: {DEFAULTUSER} \n"
-                     f"⚙️мαιηтαιηєя: [𝓐𝓫𝓱𝓲𝓷𝓪𝓿 𝓢𝓱𝓲𝓷𝓭𝓮](t.me/AbhinavShinde)"
-                     )
+    """ For .start command, check if the bot is running.  """
+    logo = ALIVE_LOGO
+    output = (f"🤖𝔸ℙ𝕌ℕ 𝕀𝔻ℍ𝔸ℝ𝕀ℂℍ ℍ𝔸𝕀🤖 \n"
+             f"♥️тєℓєтнση νєяѕιση: {version.__version__} \n"
+             f"🐍ρутнση νєяѕιση: {python_version()} \n" 
+             f"🤘вσт νєяѕιση: Remix {BOT_VER} \n" 
+             f"==================================== \n"
+             f"👦🏻υѕєя: {DEFAULTUSER} \n"
+             f"⚙️мαιηтαιηєя: [𝓐𝓫𝓱𝓲𝓷𝓪𝓿 𝓢𝓱𝓲𝓷𝓭𝓮](t.me/AbhinavShinde)"
+             f"==================================== \n")
+    await bot.send_file(alive.chat_id, logo, caption=output)
+    await alive.delete()
                          
 
 
