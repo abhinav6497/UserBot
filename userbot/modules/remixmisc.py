@@ -1,26 +1,3 @@
-sahyam2019
-oub-remix
-Template
-forked from mkaraniya/OpenUserBot
-0
-7
-374
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-oub-remix/userbot/modules/remixmisc.py /
-@sahyam2019
-sahyam2019 added: randompp module
-Latest commit 7e0f493 7 hours ago
- History
- 1 contributor
-834 lines (755 sloc)  31.1 KB
- 
 #imported from github.com/ravana69/PornHub to userbot by @heyworld 
 #please don't nuke my credits 😓
 import requests
