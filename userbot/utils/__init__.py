@@ -13,5 +13,4 @@ from .tools import (
     time_formatter,
     human_to_bytes,
     md5
-    admin_cmd
 )
