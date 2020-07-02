@@ -19,6 +19,8 @@ from userbot.events import register
 COLLECTION_STRING = [
 
   "Rashmika-Mandana-cute-wallpaper"
+  
+  "rashmika-mandana-beautiful-wallpaper"
 
 ]
 
