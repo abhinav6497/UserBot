@@ -1,3 +1,27 @@
+sahyam2019
+/
+oub-remix
+Template
+forked from mkaraniya/OpenUserBot
+0
+7
+374
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+oub-remix/userbot/modules/remixmisc.py /
+@sahyam2019
+sahyam2019 added: randompp module
+Latest commit 7e0f493 7 hours ago
+ History
+ 1 contributor
+834 lines (755 sloc)  31.1 KB
+ 
 #imported from github.com/ravana69/PornHub to userbot by @heyworld 
 #please don't nuke my credits 😓
 import requests
@@ -83,7 +107,7 @@ async def apk(e):
         app_details += "\n\n<code>Developer :</code> <a href='"+app_dev_link+"'>"+app_dev+"</a>"
         app_details += "\n<code>Rating :</code> "+app_rating.replace("Rated ", "⭐ ").replace(" out of ", "/").replace(" stars", "", 1).replace(" stars", "⭐ ").replace("five", "5")
         app_details += "\n<code>Features :</code> <a href='"+app_link+"'>View in Play Store</a>"
-        app_details += "\n\n===> Abhinav Shinde <==="
+        app_details += "\n\n===> @heyw𝖔rld <==="
         await e.edit(app_details, link_preview = True, parse_mode = 'HTML')
     except IndexError:
         await e.edit("No result found in search. Please enter **Valid app name**")
@@ -828,5 +852,7 @@ CMD_HELP.update({
 \n\n`.weeb` <text>\
 \nUsage:weebify a text\
 \n\nIt contains (`.bold <text>`,`.cur <text>`,`.curbold <text>`,`.medi <text>`,`.medibold <text>`,`.doublestruck <text>`)\
-\nUsage:makes your text <bold,cursive,cursivebold,medival,medivalbold,gayishbold>"
+\nUsage:makes your text <bold,cursive,cursivebold,medival,medivalbold,gayishbold>\
+\n\n`.randompp`\
+\nUsage:Automatically changes your profile picture after one hour. To stop this use .restart."       
 })
