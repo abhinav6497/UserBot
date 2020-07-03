@@ -536,7 +536,7 @@ HELLOSTR = [
 ]
 
 PROSTR = [
-    "`You is pro sar.`",
+    "`You is pro user.`",
      "`Pros here -_- Time to Leave`",
      "`Pros everywhere`",
      "`Pro Pro Pro ; What a tragedy`",
