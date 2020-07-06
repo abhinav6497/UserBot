@@ -1,0 +1,2 @@
+language = "python3"
+run = "rm -rf UserBot && git clone https://github.com/abhinav6497/UserBot && cd UserBot && pip install telethon && pip install --upgrade pip && python3 GenerateSessionString.py && rm -rf UserBot && pip install speedtest-cli && speedtest-cli"
