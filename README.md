@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.com/abhinav6497/UserBot.svg?branch=sql-extended)](https://travis-ci.com/abhinav6497/UserBot) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/38fee611df7c4312be63a15cad64a50a)](https://www.codacy.com/manual/sahyam2019/oub-remix?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sahyam2019/oub-remix&amp;utm_campaign=Badge_Grade) ![Last Commit](https://img.shields.io/github/last-commit/abhinav6497/UserBot) ![Contributers](https://img.shields.io/github/contributors/abhinav6497/UserBot) ![Forks](https://img.shields.io/github/forks/abhinav6497/UserBot)     
 # Project OpenUserBot Remix
-[![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://GitHub.com/Naereen/)
+[![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://GitHub.com/abhinav6497/)
 
 ![logo](https://telegra.ph/file/12fd39f968f0892ae1a7e.jpg)
 
