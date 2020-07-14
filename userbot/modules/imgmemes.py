@@ -13,6 +13,7 @@ from bs4 import BeautifulSoup
 from emoji import get_emoji_regexp
 from PIL import Image
 from validators.url import url
+from userbot import CMD_HELP
 
 
 EMOJI_PATTERN = re.compile(
@@ -218,4 +219,4 @@ CMD_HELP.update({
 \n\n.cmm\
 \nUsage: type .cmm <text>\
 \n\n.kanna\
-\nUsage: same as kanna"})
+\nUsage: same as cmm"})
