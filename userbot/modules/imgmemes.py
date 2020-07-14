@@ -209,14 +209,13 @@ async def nekobot(cat):
     await cat.client.send_file(cat.chat_id , catfile , reply_to = reply_to_id ) 
     await cat.delete()
     
- CMD_HELP.update({
-    "imgmemes":
-    ".modi\
+CMD_HELP.update({
+"imgmemes":
+"For fun purpose\
 \nUsage: type .modi <text> to get modi's Tweet.\
 \n\n.trump\
 \nUsage: same as modi ;)\
 \n\n.cmm\
 \nUsage: type .cmm <text>\
 \n\n.kanna\
-\nUsage: same as kanna\"
-})
+\nUsage: same as kanna"})
