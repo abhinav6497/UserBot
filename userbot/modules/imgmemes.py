@@ -1,11 +1,105 @@
-
-import random, re
-#from uniregister.util import admin_cmd
+#imported from catuserbot by @RoyalBoyPriyanshu and @DeletedUser420 also thank @AbhinavShinde
+import random
+from random import choice
+#from unicat.client.util import admin_cmd
 import asyncio
+from asyncio import sleep
 from telethon import events
 from userbot.events import register
-from asyncio import sleep
 import time
+import requests , os, re
+from re import sub
+from bs4 import BeautifulSoup
+from emoji import get_emoji_regexp
+from PIL import Image
+from validators.url import url
+
+
+EMOJI_PATTERN = re.compile(
+    "["
+    "\U0001F1E0-\U0001F1FF"  # flags (iOS)
+    "\U0001F300-\U0001F5FF"  # symbols & pictographs
+    "\U0001F600-\U0001F64F"  # emoticons
+    "\U0001F680-\U0001F6FF"  # transport & map symbols
+    "\U0001F700-\U0001F77F"  # alchemical symbols
+    "\U0001F780-\U0001F7FF"  # Geometric Shapes Extended
+    "\U0001F800-\U0001F8FF"  # Supplemental Arrows-C
+    "\U0001F900-\U0001F9FF"  # Supplemental Symbols and Pictographs
+    "\U0001FA00-\U0001FA6F"  # Chess Symbols
+    "\U0001FA70-\U0001FAFF"  # Symbols and Pictographs Extended-A
+    "\U00002702-\U000027B0"  # Dingbats 
+    "]+")
+
+
+def deEmojify(inputString: str) -> str:
+    """Remove emojis and other non-safe characters from string"""
+    return re.sub(EMOJI_PATTERN, '', inputString)
+
+async def trumptweet(text):
+        r = requests.get(
+            f"https://nekobot.xyz/api/imagegen?type=trumptweet&text={text}").json()
+        sandy = r.get("message")
+        caturl = url(sandy)
+        if not caturl:
+            return  "check syntax once more"
+        with open("temp.png", "wb") as f:
+            f.write(requests.get(sandy).content)
+        img = Image.open("temp.png").convert("RGB")
+        img.save("temp.jpg", "jpeg")    
+        return "temp.jpg"
+
+async def changemymind(text):
+        r = requests.get(
+            f"https://nekobot.xyz/api/imagegen?type=changemymind&text={text}").json()
+        sandy = r.get("message")
+        caturl = url(sandy)
+        if not caturl:
+            return  "check syntax once more"
+        with open("temp.png", "wb") as f:
+            f.write(requests.get(sandy).content)
+        img = Image.open("temp.png").convert("RGB")
+        img.save("temp.jpg", "jpeg")    
+        return "temp.jpg"
+    
+async def kannagen(text):
+        r = requests.get(
+            f"https://nekobot.xyz/api/imagegen?type=kannagen&text={text}").json()
+        sandy = r.get("message")
+        caturl = url(sandy)
+        if not caturl:
+            return  "check syntax once more"
+        with open("temp.png", "wb") as f:
+            f.write(requests.get(sandy).content)
+        img = Image.open("temp.png").convert("RGB")
+        img.save("temp.webp", "webp")    
+        return "temp.webp"    
+    
+async def moditweet(text):
+        r = requests.get(
+            f"https://nekobot.xyz/api/imagegen?type=tweet&text={text}&username=narendramodi").json()
+        sandy = r.get("message")
+        caturl = url(sandy)
+        if not caturl:
+            return  "check syntax once more"
+        with open("temp.png", "wb") as f:
+            f.write(requests.get(sandy).content)
+        img = Image.open("temp.png").convert("RGB")
+        img.save("temp.jpg", "jpeg")    
+        return "temp.jpg"     
+    
+async def tweets(text1,text2):
+        r = requests.get(
+            f"https://nekobot.xyz/api/imagegen?type=tweet&text={text1}&username={text2}").json()
+        sandy = r.get("message")
+        caturl = url(sandy)
+        if not caturl:
+            return  "check syntax once more"
+        with open("temp.png", "wb") as f:
+            f.write(requests.get(sandy).content)
+        img = Image.open("temp.png").convert("RGB")
+        img.save("temp.jpg", "jpeg")    
+        return "temp.jpg"      
+
 
 @register(pattern="^.trump(?: |$)(.*)", outgoing=True)
 async def nekobot(cat):
@@ -31,7 +125,7 @@ async def nekobot(cat):
         pass   
     text = deEmojify(text)
     catfile = await trumptweet(text)
-    await register.send_file(cat.chat_id , catfile , reply_to = reply_to_id ) 
+    await cat.client.send_file(cat.chat_id , catfile , reply_to = reply_to_id ) 
     await cat.delete()
     
 @register(pattern="^.modi(?: |$)(.*)", outgoing=True)
@@ -58,7 +152,7 @@ async def nekobot(cat):
         pass   
     text = deEmojify(text)
     catfile = await moditweet(text)
-    await register.send_file(cat.chat_id , catfile , reply_to = reply_to_id ) 
+    await cat.client.send_file(cat.chat_id , catfile , reply_to = reply_to_id ) 
     await cat.delete() 
     
 @register(pattern="^.cmm(?: |$)(.*)", outgoing=True)
@@ -85,7 +179,7 @@ async def nekobot(cat):
         pass   
     text = deEmojify(text)
     catfile = await changemymind(text)
-    await register.send_file(cat.chat_id , catfile , reply_to = reply_to_id ) 
+    await cat.client.send_file(cat.chat_id , catfile , reply_to = reply_to_id ) 
     await cat.delete()
     
 @register(pattern="^.kanna(?: |$)(.*)", outgoing=True)
@@ -112,5 +206,5 @@ async def nekobot(cat):
         pass   
     text = deEmojify(text)
     catfile = await kannagen(text)
-    await register.send_file(cat.chat_id , catfile , reply_to = reply_to_id ) 
+    await cat.client.send_file(cat.chat_id , catfile , reply_to = reply_to_id ) 
     await cat.delete()
