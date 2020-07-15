@@ -42,8 +42,8 @@ requests>=2.18.4
 search-engine-parser
 speedtest-cli>=2.0.2
 sqlalchemy>=1.2
-telethon>=1.15.0 
-telethon-session-sqlalchemy>=0.2.15
+telethon>=1.14.0 
+telethon-session-sqlalchemy>=0.2.6
 urbandict>=0.5
 wikipedia>=1.4.0
 coffeehouse>=2.1.0
