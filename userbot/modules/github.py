@@ -59,7 +59,7 @@ CMD_HELP.update({
 \n\n`.gcommit` reply_to_any_plugin can be any type of file too. but for plugin must be in .py\
 \n\nUsage: GITHUB File Uploader Plugin for userbot. Heroku Automation should be Enabled. Else u r not that lazy , For lazy people\
 \n\nInstructions:- Set GITHUB_ACCESS_TOKEN and GIT_REPO_NAME Variables in Heroku vars First\
-\n\n\`.usage`\
+\n\n`.usage`\
 \nUsage: Check your heroku dyno hours remaining\
 \n\n`.set var` <NEW VAR> <VALUE>\
 \nUsage: add new variable or update existing value variable\
@@ -70,6 +70,6 @@ CMD_HELP.update({
 \n\n`.del var` <VAR>\
 \nUsage: delete existing variable\
 \n!!! WARNING !!!, after deleting variable the bot will restarted\
-\\nUsage:`.logs`\
+\n\n`.logs`\
 \nUsage: Get heroku dyno logs"
 })
