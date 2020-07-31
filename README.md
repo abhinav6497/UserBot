@@ -1,6 +1,5 @@
-[![Build Status](https://travis-ci.com/abhinav6497/UserBot.svg?branch=sql-extended)](https://travis-ci.com/abhinav6497/UserBot) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/38fee611df7c4312be63a15cad64a50a)](https://www.codacy.com/manual/sahyam2019/oub-remix?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sahyam2019/oub-remix&amp;utm_campaign=Badge_Grade) ![Last Commit](https://img.shields.io/github/last-commit/abhinav6497/UserBot) ![Contributers](https://img.shields.io/github/contributors/abhinav6497/UserBot) ![Forks](https://img.shields.io/github/forks/abhinav6497/UserBot) <a href="https://t.me/AbhinavShinde"><img src="https://img.shields.io/badge/-Telegram%20Account-red.svg?logo=Telegram"></a>
+[![Build Status](https://travis-ci.com/sahyam2019/oub-remix.svg?branch=sql-extended)](https://travis-ci.com/sahyam2019/oub-remix) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/38fee611df7c4312be63a15cad64a50a)](https://www.codacy.com/manual/sahyam2019/oub-remix?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sahyam2019/oub-remix&amp;utm_campaign=Badge_Grade) ![Last Commit](https://img.shields.io/github/last-commit/sahyam2019/oub-remix) ![Contributers](https://img.shields.io/github/contributors/sahyam2019/oub-remix) ![Forks](https://img.shields.io/github/forks/sahyam2019/oub-remix)     
 # Project OpenUserBot Remix
-[![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://GitHub.com/abhinav6497/)
 
 ![logo](https://telegra.ph/file/12fd39f968f0892ae1a7e.jpg)
 
@@ -52,6 +51,7 @@ Thanks for all :
 * [kandnub](https://github.com/kandnub) - TG-UserBot
 * [༺αиυвιѕ༻](https://github.com/Dark-Princ3) - X-tra-Telegram
 * [MoveAngel](https://github.com/MoveAngel) - One4uBot
+* [keselekpermen69](https://github.com/keselekpermen69) - UserButt
 
 and many more people who aren't mentioned here, but may be found in [Contributors](https://github.com/sahyam2019/oub-remix/graphs/contributors).
 
