@@ -104,8 +104,8 @@ def register(**args):
                 if not disable_errors:
                     date = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
-                    text = "**REMIX ERROR REPORT**\n"
-                    link = "[OUB REMIX](https://t.me/PPE_SUPPORT)"
+                    text = "**USERBOT ERROR REPORT**\n"
+                    link = "[USERBOT](https://t.me/AbhinavShinde)"
                     text += "If you want to, you can report it"
                     text += f"- just forward this message to {link}.\n"
                     text += "Nothing is logged except the fact of error and date\n"
