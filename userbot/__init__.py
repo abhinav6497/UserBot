@@ -7,7 +7,7 @@
 
 import os
 import re
-
+import time
 from sys import version_info
 from logging import basicConfig, getLogger, INFO, DEBUG
 from distutils.util import strtobool as sb
@@ -75,11 +75,6 @@ LOGSPAMMER = sb(os.environ.get("LOGSPAMMER", "False"))
 
 # Bleep Blop, this is a bot ;)
 PM_AUTO_BAN = sb(os.environ.get("PM_AUTO_BAN", "False"))
-
-# Send .chatid in any group with all your administration bots (added)
-G_BAN_LOGGER_GROUP = os.environ.get("G_BAN_LOGGER_GROUP", None)
-if G_BAN_LOGGER_GROUP:
-        G_BAN_LOGGER_GROUP = int(G_BAN_LOGGER_GROUP)
 
 # Heroku Credentials for updater.
 HEROKU_MEMEZ = sb(os.environ.get("HEROKU_MEMEZ", "False"))
@@ -161,7 +156,7 @@ BITLY_TOKEN = os.environ.get("BITLY_TOKEN", None)
 TERM_ALIAS = os.environ.get("TERM_ALIAS", "oub-remix")
 
 #Bot version
-BOT_VER = os.environ.get("BOT_VER", "3.2")
+BOT_VER = os.environ.get("BOT_VER", "3.3")
 
 # Default .alive logo
 ALIVE_LOGO = os.environ.get(
@@ -308,6 +303,8 @@ with bot:
             "BOTLOG_CHATID environment variable isn't valid"
             "Please generate proper group id and set.You can ask in @PPE_Support if you need help")
         quit(1)
+
+StartTime = time.time()        
 
 # Global Variables
 COUNT_MSG = 0
