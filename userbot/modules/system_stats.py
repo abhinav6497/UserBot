@@ -14,6 +14,7 @@ from telethon import __version__, version
 import platform
 import sys
 import time
+import asyncio
 from datetime import datetime
 import psutil
 from userbot import CMD_HELP, ALIVE_NAME, BOT_VER, ALIVE_LOGO, bot, StartTime
@@ -233,13 +234,17 @@ async def amireallyalive(alive):
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
-            await bot.send_file(alive.chat_id, logo, caption=output)
             await alive.delete()
+            pic_alive = await bot.send_file(alive.chat_id, logo, caption=output)
+            await asyncio.sleep(25)
+            await pic_alive.delete()
         except BaseException:
             await alive.edit(output + "\n\n *`The provided logo is invalid."
                              "\nMake sure the link is directed to the logo picture`")
     else:
         await alive.edit(output)
+        await asyncio.sleep(25)
+        await alive.delete()
 
 @register(outgoing=True, pattern="^.aliveu")
 async def amireallyaliveuser(username):
