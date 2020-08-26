@@ -6,6 +6,7 @@
 #custom cmds by @Nitesh_231 for personal use 👀
 
 """ Userbot module for having some fun with people. """
+import html
 import asyncio
 from random import choice
 from re import sub
