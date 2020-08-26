@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.com/abhinav6497/UserBot.svg?branch=sql-extended)](https://travis-ci.com/abhinav6497/UserBot) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/38fee611df7c4312be63a15cad64a50a)](https://www.codacy.com/manual/sahyam2019/oub-remix?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sahyam2019/oub-remix&amp;utm_campaign=Badge_Grade) ![Last Commit](https://img.shields.io/github/last-commit/sahyam2019/oub-remix) ![Contributers](https://img.shields.io/github/contributors/sahyam2019/oub-remix) ![Forks](https://img.shields.io/github/forks/abhinav6497/UserBot)
-<a href="https://deepsource.io/gh/abhinav6497/UserBot/?ref=repository-badge" target="_blank"><img alt="DeepSource" title="DeepSource" src="https://static.deepsource.io/deepsource-badge-light-mini.svg"></a>
+<a href="https://deepsource.io/gh/abhinav6497/UserBot/?ref=repository-ba
 # Project OpenUserBot Remix
 
 ![logo](https://telegra.ph/file/12fd39f968f0892ae1a7e.jpg)
