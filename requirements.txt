@@ -1,5 +1,6 @@
 wheel
 aiohttp
+aiofiles
 aria2p
 async_generator
 cowpy
@@ -79,6 +80,7 @@ justwatch
 deezloader
 zipfile38
 bitlyshortener
+validators
 geopy
 glitch_this
 twitter_scraper
