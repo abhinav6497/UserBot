@@ -88,7 +88,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         if BOTLOG:
             await event.client.send_message(
                 BOTLOG_CHATID, "#UPDATE \n"
-                "oub-remix was successfully updated")
+                "UserBot was successfully updated")
 
     else:
         await event.edit('`[HEROKU]:'
@@ -109,7 +109,7 @@ async def update(event, repo, ups_rem, ac_br):
     if BOTLOG:
             await event.client.send_message(
                 BOTLOG_CHATID, "#UPDATE \n"
-                "oub-remix was successfully updated")
+                "UserBot was successfully updated")
 
     # Spin a new instance of bot
     args = [sys.executable, "-m", "userbot"]
@@ -195,7 +195,7 @@ async def upstream(event):
         await event.edit(
             '`Force-Syncing to latest stable userbot code, please wait...`')
     else:
-        await event.edit('`Updating oubremix, please wait....`')
+        await event.edit('`Updating UserBot, please wait....`')
     if conf == "now":
         await update(event, repo, ups_rem, ac_br)
     elif conf == "deploy":
