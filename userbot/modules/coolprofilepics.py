@@ -122,4 +122,4 @@ async def main(event):
 
         os.system("rm -rf donottouch.jpg")
 
-        await asyncio.sleep(10800) #Edit this to your required needs
+        await asyncio.sleep(86400) #Edit this to your required needs
