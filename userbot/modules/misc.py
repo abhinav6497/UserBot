@@ -74,7 +74,7 @@ async def killdabot(event):
 
 @register(outgoing=True, pattern="^.restart$")
 async def killdabot(event):
-    await event.edit("`[*i would be back in a moment*](https://telegra.ph/file/ba576cbbedae0d0a0c323.mp4)`")
+    await event.edit("`*i would be back in a moment*`")
     if BOTLOG:
         await event.client.send_message(BOTLOG_CHATID, "#RESTART \n"
                                         "Bot Restarted")
