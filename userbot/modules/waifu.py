@@ -153,4 +153,6 @@ CMD_HELP.update({
 \nUsage: Reply to a image / sticker to suit up!.\
 \n\n`.rst`\
 \nUsage: To stickerize your text with random sticker templates."    
-})    
+\n\n`.hsb` <text or reply>\
+\nUsage: generates animated rolling sticker out of text"
+})
