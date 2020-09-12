@@ -142,4 +142,3 @@ async def rollstick(tem):
         )
     await sleep(5)
     await tem.delete()
-
