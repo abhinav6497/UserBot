@@ -10,7 +10,7 @@ import re
 
 import requests
 from userbot.events import register
-from userbot import CMD_HELP
+from userbot import CMD_HELP, bot
 from userbot.utils import time_formatter as t
 
 
@@ -216,7 +216,7 @@ async def anilist(event):
         if image:
             image = image.get("large")
             await event.delete()
-            await borg.send_file(
+            await bot.send_file(
                 event.chat_id, image, caption=msg, parse_mode="md", reply_to=reply_to_id
             )
         else:
@@ -288,10 +288,10 @@ async def anilist(event):
         )
         if image:
             try:
-                await borg.send_file(
+                await bot.send_file(
                     event.chat_id,
                     image,
-                    caption=ms_ms_g,
+                    caption=ms_g,
                     parse_mode="md",
                     reply_to=reply_to_id,
                 )
@@ -306,7 +306,7 @@ async def anilist(event):
 @register(outgoing=True, pattern=r"^\.anilist ?(.*)")
 async def anilist(event):
     input_str = event.pattern_match.group(1)
-    event = await edit_or_reply(event, "Searching...")
+    event = await event.edit("Searching...")
     result = await callAPI(input_str)
     msg = await formatJSON(result)
     await event.edit(msg, link_preview=True)
@@ -324,4 +324,4 @@ CMD_HELP.update(
     \n\n**Syntax : **`.aniairing <anime name >`\
     \n**Usage : **Shows you the time for that current running anime show.\
     "
-    }
+    })
