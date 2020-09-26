@@ -86,3 +86,5 @@ twitter_scraper
 pyaztro
 jikanpy
 nekos.py
+lottie
+wand
