@@ -73,7 +73,7 @@ async def kang(event):
             emoji = "🤔"
 
     packname = f"a{user.id}_by_{pack_username}_{number}{'_anim' if is_anim else ''}"
-    packtitle = (f"@{user.username or user.first_name}'s remix Pack "
+    packtitle = (f"@{user.username or user.first_name}'s kang Pack "
                 f"{number}{' animated' if is_anim else ''}")
     response = urllib.request.urlopen(
             urllib.request.Request(f'http://t.me/addstickers/{packname}'))
@@ -111,7 +111,7 @@ async def kang(event):
                 # Switch to a new pack, create one if it doesn't exist
                 number += 1
                 packname = f"a{user.id}_by_{pack_username}_{number}{'_anim' if is_anim else ''}"
-                packtitle = (f"@{user.username or user.first_name}'s remix Pack "
+                packtitle = (f"@{user.username or user.first_name}'s kang Pack "
                             f"{number}{' animated' if is_anim else ''}")
 
                 await event.edit(
