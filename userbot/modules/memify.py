@@ -166,8 +166,3 @@ async def draw_meme_text(image_path, text):
     img.save(webp_file, "WebP")
     return webp_file
 
-CMD_HELP.update({
-    "mmf": ">`.mmf` texttop ; textbottom"
-    "\nUsage: Reply a sticker/image and send with cmd."
-    "\n\n>`.mem` your text"
-    "\nUsage: Reply a sticker/image/gif and get meme from bot"})
