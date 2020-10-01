@@ -10,9 +10,9 @@ import html
 import asyncio
 import os
 from PIL import Image, ImageColor
-from random import choice
+from random import choice, randint
 from re import sub
-from userbot import CMD_HELP
+from userbot import CMD_HELP, LOGS
 from userbot.events import register
 from userbot import bot
 
@@ -134,6 +134,23 @@ IWIS = [
     "乁( ⁰͡  Ĺ̯ ⁰͡ ) ㄏ",
 ]
 
+GAMBAR_TITIT = """
+🍆🍆
+🍆🍆🍆
+  🍆🍆🍆
+    🍆🍆🍆
+     🍆🍆🍆
+       🍆🍆🍆
+        🍆🍆🍆
+         🍆🍆🍆
+          🍆🍆🍆
+          🍆🍆🍆
+      🍆🍆🍆🍆
+ 🍆🍆🍆🍆🍆🍆
+ 🍆🍆🍆  🍆🍆🍆
+    🍆🍆       🍆🍆
+"""
+
 # ===========================================
 
 
@@ -233,6 +250,15 @@ async def whoizme(e):
         await e.edit("EVERyBOdy iZ PrO UNtIL U ArRivE 🔥")
 
 
+@register(outgoing=True, pattern=r"^\.(?:penis|dick)\s?(.)?")
+async def emoji_penis(titit):
+    emoji = titit.pattern_match.group(1)
+    titid = GAMBAR_TITIT
+    if emoji:
+        titid = titid.replace("🍆", emoji)
+    await titit.edit(titid)
+
+
 @register(outgoing=True, pattern="^.gtfo$")
 async def gtfo(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
@@ -265,6 +291,42 @@ async def fcmd(e):
             c = max(line, 1)
             out += (n * c) + "\n"
         await e.edit(html.escape(out))
+
+
+@register(outgoing=True, pattern="^.iff$")
+async def pressf(f):
+    """Pays respects"""
+    args = f.text.split()
+    arg = (f.text.split(' ', 1))[1] if len(args) > 1 else None
+    if len(args) == 1:
+        r = randint(0, 3)
+        LOGS.info(r)
+        if r == 0:
+            await f.edit("┏━━━┓\n┃┏━━┛\n┃┗━━┓\n┃┏━━┛\n┃┃\n┗┛")
+        elif r == 1:
+            await f.edit("╭━━━╮\n┃╭━━╯\n┃╰━━╮\n┃╭━━╯\n┃┃\n╰╯")
+        else:
+            arg = "F"
+    if arg is not None:
+        out = ""
+        F_LENGTHS = [5, 1, 1, 4, 1, 1, 1]
+        for line in F_LENGTHS:
+            c = max(round(line / len(arg)), 1)
+            out += (arg * c) + "\n"
+        await f.edit("`" + out + "`")
+
+
+@register(outgoing=True, pattern="^.paw$")
+async def paw(pawed):
+    if not pawed.text[0].isalpha() and pawed.text[0] not in (
+            "/", "#", "@", "!"):
+        await pawed.edit("`(=ↀωↀ=)`")
+
+
+@register(outgoing=True, pattern="^.tf$")
+async def tf(focc):
+    if not focc.text[0].isalpha() and focc.text[0] not in ("/", "#", "@", "!"):
+        await focc.edit("`(̿▀̿ ̿Ĺ̯̿̿▀̿ ̿)̄ ` ")
 
 
 @register(pattern="^.color(?: |$)(.*)", outgoing=True)
