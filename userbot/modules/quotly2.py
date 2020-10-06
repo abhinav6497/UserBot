@@ -1,5 +1,5 @@
-# ported from Catuserbot, module modified by  @Nitesh_231
-# Original Sauce """https://github.com/erenmetesar"""
+# Based on """https://github.com/erenmetesar"""
+# Module by @okey_retard and modified for userbot by @Nitesh_231
 
 import logging
 import json
