@@ -207,6 +207,9 @@ DEEZER_ARL_TOKEN = os.environ.get("DEEZER_ARL_TOKEN", None)
 API_TOKEN = os.environ.get("API_TOKEN", "15e05de0-0357-4553-b39c-d614443ed91e")
 API_URL = os.environ.get("API_URL", "http://antiddos.systems")
 
+# Deep Api
+DEEP_AI = os.environ.get("DEEP_AI") or None
+
 # Inline bot helper
 BOT_TOKEN = os.environ.get("BOT_TOKEN") or None
 BOT_USERNAME = os.environ.get("BOT_USERNAME") or None
