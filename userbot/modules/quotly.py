@@ -5,7 +5,6 @@
 #
 # Port From UniBorg to UserBot by MoveAngel
 
-import telethon
 from asyncio.exceptions import TimeoutError
 
 from telethon import events

@@ -1,14 +1,10 @@
 """COMMAND : .lovestory"""
-import random, re
 #from uniborg.util import admin_cmd
 import asyncio
-from telethon import events
 from userbot.events import register
-from asyncio import sleep
-import time
+
 
 @register(pattern=".lovestory")
-
 async def _(event):
 
     if event.fwd_from:
@@ -21,27 +17,27 @@ async def _(event):
 
     #input_str = event.pattern_match.group(1)
 
-    #if input_str == "lovestory":
+    # if input_str == "lovestory":
 
     await event.edit("Starting asf")
 
     animation_chars = [
 
-            "1 ❤️ love story",
-            "  😐             😕 \n/👕\         <👗\ \n 👖               /|",    
-            "  😉          😳 \n/👕\       /👗\ \n  👖            /|",
-            "  😚            😒 \n/👕\         <👗> \n  👖             /|",
-            "  😍         ☺️ \n/👕\      /👗\ \n  👖          /|",
-            "  😍          😍 \n/👕\       /👗\ \n  👖           /|",
-            "  😘   😊 \n /👕\/👗\ \n   👖   /|",
-            " 😳  😁 \n /|\ /👙\ \n /     / |",    
-            "😈    /😰\ \n<|\      👙 \n /🍆    / |",
-            "😅 \n/(),✊😮 \n /\         _/\\/|",
-            "😎 \n/\\_,__😫 \n  //    //       \\",
-            "😖 \n/\\_,💦_😋  \n  //         //        \\",
-            "  😭      ☺️ \n  /|\   /(👶)\ \n  /!\   / \ ",
-            "The End 😂..."
-        ]
+        "1 ❤️ love story",
+        r"  😐             😕 \n/👕\         <👗\ \n 👖               /|",
+        r"  😉          😳 \n/👕\       /👗\ \n  👖            /|",
+        r"  😚            😒 \n/👕\         <👗> \n  👖             /|",
+        r"  😍         ☺️ \n/👕\      /👗\ \n  👖          /|",
+        r"  😍          😍 \n/👕\       /👗\ \n  👖           /|",
+        r"  😘   😊 \n /👕\/👗\ \n   👖   /|",
+        r" 😳  😁 \n /|\ /👙\ \n /     / |",
+        r"😈    /😰\ \n<|\      👙 \n /🍆    / |",
+        r"😅 \n/(),✊😮 \n /\         _/\\/|",
+        "😎 \n/\\_,__😫 \n  //    //       \\",
+        "😖 \n/\\_,💦_😋  \n  //         //        \\",
+        r"  😭      ☺️ \n  /|\   /(👶)\ \n  /!\   / \ ",
+        "The End 😂..."
+    ]
 
     for i in animation_ttl:
 

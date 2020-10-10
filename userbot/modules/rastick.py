@@ -1,7 +1,7 @@
 import random
 import re
 
-from userbot import CMD_HELP, bot
+from userbot import bot
 from userbot.events import register
 from asyncio import sleep
 EMOJI_PATTERN = re.compile(
@@ -115,6 +115,7 @@ async def rastick(animu):
         )
     await sleep(5)
     await animu.delete()
+
 
 @register(outgoing=True, pattern=r"^\.hsb(?: |$)(.*)")
 async def rollstick(tem):

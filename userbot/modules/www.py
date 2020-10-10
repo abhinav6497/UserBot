@@ -9,7 +9,6 @@
 from datetime import datetime
 
 from speedtest import Speedtest
-from telethon import functions
 from userbot import CMD_HELP
 from userbot.events import register
 
@@ -53,8 +52,6 @@ def speed_convert(size):
     return f"{round(size, 2)} {units[zero]}"
 
 
-
-
 @register(outgoing=True, pattern="^.ping$")
 async def pingme(pong):
     """ For .ping command, ping the userbot from any chat.  """
@@ -69,4 +66,4 @@ CMD_HELP.update(
     \nUsage: Shows how long it takes to ping your bot.\
     \n\n`.speed`\
     \nUsage: Does a speedtest and shows the results."
-})
+     })

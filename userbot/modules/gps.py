@@ -4,7 +4,6 @@ from telethon.tl import types
 from userbot.events import register
 
 
-
 @register(outgoing=True, pattern="^.gps(?: |$)(.*)")
 async def gps(event):
     if event.fwd_from:

@@ -2,7 +2,7 @@
 #
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
-#inline credit @keselekpermen69
+# inline credit @keselekpermen69
 """ Userbot initialization. """
 
 import os
@@ -82,7 +82,7 @@ HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
 HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
 
 # JustWatch Country
-WATCH_COUNTRY = os.environ.get("WATCH_COUNTRY","IN")
+WATCH_COUNTRY = os.environ.get("WATCH_COUNTRY", "IN")
 
 # Github Credentials for updater and Gitupload.
 GIT_REPO_NAME = os.environ.get("GIT_REPO_NAME", None)
@@ -93,7 +93,7 @@ UPSTREAM_REPO_URL = os.environ.get(
     "UPSTREAM_REPO_URL",
     "https://github.com/sahyam2019/oub-remix.git")
 UPSTREAM_REPO_BRANCH = os.environ.get(
-    "UPSTREAM_REPO_BRANCH", "sql-extended")    
+    "UPSTREAM_REPO_BRANCH", "sql-extended")
 
 # Console verbose logging
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
@@ -128,7 +128,7 @@ MONGO_URI = os.environ.get("MONGO_URI", None)
 
 # set blacklist_chats where you do not want userbot's features
 UB_BLACK_LIST_CHAT = os.environ.get("UB_BLACK_LIST_CHAT", "")
-    
+
 # Anti Spambot Config
 ANTI_SPAMBOT = sb(os.environ.get("ANTI_SPAMBOT", "False"))
 ANTI_SPAMBOT_SHOUT = sb(os.environ.get("ANTI_SPAMBOT_SHOUT", "False"))
@@ -155,12 +155,12 @@ BITLY_TOKEN = os.environ.get("BITLY_TOKEN", None)
 # Bot Name
 TERM_ALIAS = os.environ.get("TERM_ALIAS", "UserBot")
 
-#Bot version
+# Bot version
 BOT_VER = os.environ.get("BOT_VER", "3.4")
 
 # Default .alive logo
 ALIVE_LOGO = os.environ.get(
-    "ALIVE_LOGO") or "https://telegra.ph/file/7714b2fd458c5e678d1a6.jpg"    
+    "ALIVE_LOGO") or "https://telegra.ph/file/7714b2fd458c5e678d1a6.jpg"
 
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
@@ -215,7 +215,6 @@ BOT_TOKEN = os.environ.get("BOT_TOKEN") or None
 BOT_USERNAME = os.environ.get("BOT_USERNAME") or None
 
 
-
 # Init Mongo
 MONGOCLIENT = MongoClient(MONGO_URI, 27017, serverSelectionTimeoutMS=1)
 MONGO = MONGOCLIENT.userbot
@@ -241,11 +240,6 @@ def is_redis_alive():
         return True
     except BaseException:
         return False
-    
-
-
-
-
 
 
 # Setting Up CloudMail.ru and MEGA.nz extractor binaries,
@@ -301,13 +295,13 @@ async def check_botlog_chatid():
 with bot:
     try:
         bot.loop.run_until_complete(check_botlog_chatid())
-    except:
+    except BaseException:
         LOGS.info(
             "BOTLOG_CHATID environment variable isn't valid"
             "Please generate proper group id and set.You can ask in @PPE_Support if you need help")
         quit(1)
 
-StartTime = time.time()        
+StartTime = time.time()
 
 # Global Variables
 COUNT_MSG = 0

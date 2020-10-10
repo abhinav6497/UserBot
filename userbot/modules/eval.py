@@ -179,7 +179,6 @@ async def terminal_runner(term):
 '''
 
 
-
 CMD_HELP.update({
     "hacker":
     "`.eval` 2+3\

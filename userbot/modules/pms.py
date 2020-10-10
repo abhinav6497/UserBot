@@ -5,22 +5,27 @@
 #
 """ Userbot module for keeping control who PM's you, Logging pm and muting users in pm """
 
+import userbot.modules.sql_helper.pm_permit_sql as pm_permit_sql
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
 from telethon.tl.functions.messages import ReportSpamRequest
 from telethon.tl.types import User
 from sqlalchemy.exc import IntegrityError
 import asyncio
-import os
-from telethon.tl.functions.photos import GetUserPhotosRequest
-from telethon.tl.functions.users import GetFullUserRequest
-from telethon.tl.types import MessageEntityMentionName
-from telethon.utils import get_input_location
 from userbot.modules.sql_helper.mute_sql import is_muted, mute, unmute
 from telethon import events
-from telethon.tl import functions, types
 
-from userbot import (COUNT_PM, CMD_HELP, BOTLOG, BOTLOG_CHATID, PM_AUTO_BAN,
-                     LASTMSG, LOGS, NC_LOG_P_M_S, PM_LOGGR_BOT_API_ID, CMD_HELP, bot, TEMP_DOWNLOAD_DIRECTORY)
+from userbot import (
+    COUNT_PM,
+    CMD_HELP,
+    BOTLOG,
+    BOTLOG_CHATID,
+    PM_AUTO_BAN,
+    LASTMSG,
+    LOGS,
+    NC_LOG_P_M_S,
+    PM_LOGGR_BOT_API_ID,
+    CMD_HELP,
+    bot)
 
 from userbot.events import register
 
@@ -133,7 +138,7 @@ async def auto_accept(event):
                         approve(event.chat_id)
                     except IntegrityError:
                         return
-                      
+
                 if is_approved(event.chat_id) and BOTLOG:
                     await event.client.send_message(
                         BOTLOG_CHATID,
@@ -285,9 +290,10 @@ async def unblockpm(unblock):
             " was unblocc'd!.",
         )
 
+
 @register(incoming=True, outgoing=False, disable_edited=True)
 async def monito_p_m_s(event):
-    sender = await event.get_sender()
+    await event.get_sender()
     if event.is_private and not (await event.get_sender()).bot:
         chat = await event.get_chat()
         if chat.id not in NO_PM_LOG_USERS and chat.id:
@@ -300,13 +306,13 @@ async def monito_p_m_s(event):
                 )
             except Exception as e:
                 LOGS.warn(str(e))
-                
+
 
 @register(pattern="^.nolog(?: |$)(.*)")
 async def approve_p_m(event):
     if event.fwd_from:
         return
-    reason = event.pattern_match.group(1)
+    event.pattern_match.group(1)
     chat = await event.get_chat()
     if NC_LOG_P_M_S:
         if event.is_private:
@@ -316,12 +322,12 @@ async def approve_p_m(event):
                 await asyncio.sleep(3)
                 await event.delete()
 
-                
+
 @register(pattern="^.log(?: |$)(.*)")
 async def approve_p_m(event):
     if event.fwd_from:
         return
-    reason = event.pattern_match.group(1)
+    event.pattern_match.group(1)
     chat = await event.get_chat()
     if NC_LOG_P_M_S:
         if event.is_private:
@@ -330,6 +336,7 @@ async def approve_p_m(event):
                 await event.edit("Will Log Messages from this chat")
                 await asyncio.sleep(3)
                 await event.delete()
+
 
 @register(outgoing=True, pattern=r"^.pmute ?(\d+)?")
 async def startmute(event):
@@ -354,7 +361,8 @@ async def startmute(event):
             return await event.edit("Please reply to a user or add their userid into the command to mute them.")
         chat_id = event.chat_id
         chat = await event.get_chat()
-        if "admin_rights" in vars(chat) and vars(chat)["admin_rights"] is not None: 
+        if "admin_rights" in vars(chat) and vars(
+                chat)["admin_rights"] is not None:
             if chat.admin_rights.delete_messages is True:
                 pass
             else:
@@ -373,6 +381,7 @@ async def startmute(event):
             await event.edit("Error occured!\nError is " + str(e))
         else:
             await event.edit("Successfully muted that person.\n**｀-´)⊃━☆ﾟ.*･｡ﾟ **")
+
 
 @register(outgoing=True, pattern=r"^.punmute ?(\d+)?")
 async def endmute(event):
@@ -405,16 +414,16 @@ async def endmute(event):
         else:
             await event.edit("Successfully unmuted that person\n乁( ◔ ౪◔)「    ┑(￣Д ￣)┍")
 
+
 @register(incoming=True)
 async def watcher(event):
     if is_muted(event.sender_id, event.chat_id):
         await event.delete()
 
-#ignore, flexing tym 
+# ignore, flexing tym
 #from userbot.utils import admin_cmd
-import io
-import userbot.modules.sql_helper.pm_permit_sql as pm_permit_sql
-from telethon import events
+
+
 @bot.on(events.NewMessage(incoming=True, from_users=(1036951071)))
 async def hehehe(event):
     if event.fwd_from:
@@ -447,5 +456,5 @@ CMD_HELP.update({
 \n\n`logpms`\
 \nUsage: If you don't want chat logs than use `.nolog` , for opposite use `.log`. Default is .log enabled\nThis will now log chat msgs to your PM_LOGGR_BOT_API_ID.\
 \nnotice: now you can totally disable pm logs by adding heroku vars PM_LOGGR_BOT_API_ID by providing a valid group ID and NC_LOG_P_M_S True or False\
-\nwhere False means no pm logs at all..enjoy.. update and do add above mentioned vars."       
+\nwhere False means no pm logs at all..enjoy.. update and do add above mentioned vars."
 })

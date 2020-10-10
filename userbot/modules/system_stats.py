@@ -1,4 +1,4 @@
-#Copyright (C) 2019 The Raphielscape Company LLC.
+# Copyright (C) 2019 The Raphielscape Company LLC.
 #
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ from userbot.events import register
 # ================= CONSTANT =================
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
+
 
 async def get_readable_time(seconds: int) -> str:
     count = 0
@@ -52,7 +53,6 @@ async def get_readable_time(seconds: int) -> str:
     return up_time
 
 
-
 @register(outgoing=True, pattern="^.sysd$")
 async def sysdetails(sysd):
     """ For .sysd command, get system info using neofetch. """
@@ -72,6 +72,7 @@ async def sysdetails(sysd):
             await sysd.edit("`" + result + "`")
         except FileNotFoundError:
             await sysd.edit("`Install neofetch first !!`")
+
 
 @register(outgoing=True, pattern=r"^\.spc")
 async def psu(event):
@@ -128,7 +129,7 @@ def get_size(bytes, suffix="B"):
     for unit in ["", "K", "M", "G", "T", "P"]:
         if bytes < factor:
             return f"{bytes:.2f}{unit}{suffix}"
-        bytes /= factor            
+        bytes /= factor
 
 
 @register(outgoing=True, pattern="^.botver$")
@@ -217,20 +218,21 @@ async def pipcheck(pip):
         else:
             await pip.edit("`Use .help system to see an example`")
 
+
 @register(outgoing=True, pattern="^.start$")
 async def amireallyalive(alive):
     """ For .start command, check if the bot is running.  """
     logo = ALIVE_LOGO
     uptime = await get_readable_time((time.time() - StartTime))
     output = (f"`🤖𝔸ℙ𝕌ℕ 𝕀𝔻ℍ𝔸ℝ𝕀ℂℍ ℍ𝔸𝕀🤖`\n"
-             f"`тєℓєтнση νєяѕιση ♥️`: {version.__version__} \n"
-             f"`ρутнση νєяѕιση 🐍`: {python_version()} \n"
-             f"`вσт νєяѕιση 🤘: UserBot {BOT_VER}` \n"
-             f"==================================== \n"
-             f"`υѕєя 👦🏻`: {DEFAULTUSER} \n"
-             f"`мαιηтαιηєя ⚙️`: [𝓐𝓫𝓱𝓲𝓷𝓪𝓿 𝓢𝓱𝓲𝓷𝓭𝓮](t.me/AbhinavShinde) \n"
-             f"`вσт υρтιмє ⏱️`: {uptime} \n"
-             f"====================================\n")
+              f"`тєℓєтнση νєяѕιση ♥️`: {version.__version__} \n"
+              f"`ρутнση νєяѕιση 🐍`: {python_version()} \n"
+              f"`вσт νєяѕιση 🤘: UserBot {BOT_VER}` \n"
+              f"==================================== \n"
+              f"`υѕєя 👦🏻`: {DEFAULTUSER} \n"
+              f"`мαιηтαιηєя ⚙️`: [𝓐𝓫𝓱𝓲𝓷𝓪𝓿 𝓢𝓱𝓲𝓷𝓭𝓮](t.me/AbhinavShinde) \n"
+              f"`вσт υρтιмє ⏱️`: {uptime} \n"
+              f"====================================\n")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
@@ -246,6 +248,7 @@ async def amireallyalive(alive):
         await asyncio.sleep(25)
         await alive.delete()
 
+
 @register(outgoing=True, pattern="^.aliveu")
 async def amireallyaliveuser(username):
     """ For .aliveu command, change the username in the .alive command. """
@@ -257,6 +260,7 @@ async def amireallyaliveuser(username):
         DEFAULTUSER = newuser
         output = 'Successfully changed user to ' + newuser + '!'
     await username.edit("`" f"{output}" "`")
+
 
 @register(outgoing=True, pattern="^.resetalive$")
 async def amireallyalivereset(ureset):
@@ -283,5 +287,5 @@ CMD_HELP.update({
 \n\n`.db`\
 \nUsage:Shows database related info.\
 \n\n.`.spc`\
-\nUsage:Show system specification."   
-})  
+\nUsage:Show system specification."
+})

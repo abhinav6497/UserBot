@@ -5,11 +5,11 @@ import aiohttp
 import asyncio
 import random
 from urllib.parse import quote as urlencode
-from telethon import events
 from userbot.events import register
 from userbot import CMD_HELP
 
 _pats = []
+
 
 @register(outgoing=True, pattern=r'\.(l?[gp]?)pat(?:(?: \n?|\n)([\s\S]+))?')
 async def pat(e):
@@ -26,7 +26,7 @@ async def pat(e):
     if 'g' in switch:
         pats = [i for i in pats if os.path.splitext(i)[1] == '.gif']
     elif 'p' in switch:
-        c = lambda j:os.path.splitext(j)[1] in ['.png', '.jpg', '.jpeg']
+        def c(j): return os.path.splitext(j)[1] in ['.png', '.jpg', '.jpeg']
         pats = [i for i in pats if c(i)]
     pat = random.choice(pats)
     link = f'https://headp.at/pats/{urlencode(pat)}'
@@ -37,9 +37,8 @@ async def pat(e):
         e.delete()
     ])
 
-    
     CMD_HELP.update({
-    'pat':
-    '.pat\
+        'pat':
+        '.pat\
 \nUsage: sends random pat pics & gifs.'
-})
+    })

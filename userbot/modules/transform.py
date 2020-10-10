@@ -123,6 +123,4 @@ CMD_HELP.update(
         "\n\n`.rotate <value>`"
         "\nUsage: To rotate your image\nThe value is range 1-360 if not it'll give default value which is 90"
         "\n\n`.mmf toptext ; bottomtext`"
-        "\nUsage:mmf creates a sticker meme with give text at specific locations and sends."
-    }
-)
+        "\nUsage:mmf creates a sticker meme with give text at specific locations and sends."})
