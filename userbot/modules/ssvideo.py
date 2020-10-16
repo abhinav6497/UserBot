@@ -9,7 +9,7 @@ import os
 import time
 
 from telethon.tl.types import DocumentAttributeFilename
-from userbot import CMD_HELP, bot
+from userbot import bot
 from userbot.events import register
 from userbot.utils import progress
 
@@ -32,7 +32,7 @@ async def ssvideo(framecap):
                 in reply_message.media.document.attributes)
             or (DocumentAttributeFilename(file_name="sticker.webp")
                 in reply_message.media.document.attributes)
-            ):
+        ):
         return await framecap.edit("`Unsupported files!`")
     c_time = time.time()
     await framecap.edit("`Downloading media...`")
@@ -56,4 +56,3 @@ async def ssvideo(framecap):
     except BaseException as e:
         await framecap.edit(f"{e}")
     os.system("rm -rf *.png *.mp4")
-
