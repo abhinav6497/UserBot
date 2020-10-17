@@ -14,15 +14,11 @@ import os.path
 from typing import Optional, Tuple
 from userbot import bot, LOGS
 
-from telethon import errors
-from telethon.tl import types
-from telethon.utils import get_display_name
-from telethon import events
 from telethon.tl.tlobject import TLObject
-from telethon.tl.functions.messages import GetPeerDialogsRequest
 from telethon.tl.functions.channels import GetParticipantRequest
 from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantCreator, DocumentAttributeFilename, MessageEntityPre
 from telethon.utils import add_surrogate
+
 
 async def md5(fname: str) -> str:
     hash_md5 = hashlib.md5()
@@ -143,12 +139,15 @@ async def check_media(reply_message):
         return False
     else:
         return data
+
+
 def parse_pre(text):
     text = text.strip()
     return (
-        text,
-        [MessageEntityPre(offset=0, length=len(add_surrogate(text)), language='')]
-    )
+        text, [
+            MessageEntityPre(
+                offset=0, length=len(
+                    add_surrogate(text)), language='')])
 
 
 def yaml_format(obj, indent=0, max_str_len=256, max_byte_len=64):

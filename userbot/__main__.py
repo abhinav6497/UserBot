@@ -33,7 +33,6 @@ LOGS.info(
     "\nIf you need assistance, head to https://t.me/remixsupport")
 
 
-
 if len(argv) not in (1, 3, 4):
     bot.disconnect()
 else:
