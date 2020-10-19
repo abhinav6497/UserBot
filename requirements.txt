@@ -59,7 +59,7 @@ PyGithub
 bs4
 covid>=2.4.0
 base
-pip>=20.2.3
+pip>=19.2.3
 setuptools>=50.3.0
 selenium>=3.141.0
 telegraph
