@@ -2,7 +2,7 @@
 <a href="https://deepsource.io/gh/abhinav6497/UserBot/?ref=repository-badge" target="_blank"><img alt="DeepSource" title="DeepSource" src="https://static.deepsource.io/deepsource-badge-light-mini.svg"></a> ![PyLint](https://github.com/abhinav6497/UserBot/workflows/PyLint/badge.svg) [![codebeat badge](https://codebeat.co/badges/049f1ac3-dfc2-4ee6-93a3-e40c1569313f)](https://codebeat.co/projects/github-com-abhinav6497-userbot-sql-extended)![FailedChecker](https://github.com/abhinav6497/UserBot/workflows/FailedChecker/badge.svg?branch=sql-extended) ![CI](https://github.com/abhinav6497/UserBot/workflows/CI/badge.svg) ![CodeQL](https://github.com/abhinav6497/UserBot/workflows/CodeQL/badge.svg?branch=sql-extended)
 # Project 尺 乇 从 工 乂 UserBot
 
-![logo](https://telegra.ph/file/12fd39f968f0892ae1a7e.jpg)
+![logo](https://telegra.ph/file/b17eb811d1666426e7f3b.jpg)
 
 ```
 #include <std/disclaimer.h>
@@ -49,11 +49,10 @@ Thanks for all :
 * [AvinashReddy3108](https://github.com/AvinashReddy3108) - PaperplaneExtended
 * [Mkaraniya](https://github.com/mkaraniya) - OpenUserBot
 * [DevPatel](https://github.com/Devp73) - OpenUserBot
-* [kandnub](https://github.com/kandnub) - TG-UserBot
 * [༺αиυвιѕ༻](https://github.com/Dark-Princ3) - X-tra-Telegram
 * [MoveAngel](https://github.com/MoveAngel) - One4uBot
 * [keselekpermen69](https://github.com/keselekpermen69) - UserButt
-* [GengKapak](https://github.com/GengKapak) - DCLXVI
+
 and many more people who aren't mentioned here, but may be found in [Contributors](https://github.com/sahyam2019/oub-remix/graphs/contributors).
 
 ## License
