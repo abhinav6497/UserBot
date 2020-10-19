@@ -90,5 +90,3 @@ glitch_this
 vcsi
 cairosvg
 colour
-scipy
-wordcloud
