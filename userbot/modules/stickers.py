@@ -87,7 +87,7 @@ async def kang(event):
 
     packname = f"a{user.id}_by_{pack_username}_{number}{'_anim' if is_anim else ''}"
     packtitle = (
-        f"@{user.username or user.first_name}'s kang pack Vol. "
+        f"@{user.username or user.first_name}'s kang pack Vol."
         f"{number}{' animated' if is_anim else ''}"
     )
     response = urllib.request.urlopen(
@@ -131,7 +131,7 @@ async def kang(event):
                 number += 1
                 packname = f"a{user.id}_by_{pack_username}_{number}{'_anim' if is_anim else ''}"
                 packtitle = (
-                    f"@{user.username or user.first_name}'s kang pack Vol. "
+                    f"@{user.username or user.first_name}'s kang pack Vol."
                     f"{number}{' animated' if is_anim else ''}"
                 )
 
