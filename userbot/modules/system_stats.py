@@ -217,15 +217,15 @@ async def amireallyalive(alive):
     """ For .start command, check if the bot is running.  """
     logo = ALIVE_LOGO
     uptime = await get_readable_time((time.time() - StartTime))
-    output = (f"`????? ???????? ????`\n"
-              f"`ß‰???ß‰ßﬂ¶“¶« ¶Õ?ßÒ?¶…¶“¶« ??`: {version.__version__} \n"
-              f"`¶—ßÂß‰ßﬂ¶“¶« ¶Õ?ßÒ?¶…¶“¶« ?`: {python_version()} \n"
-              f"`ß”¶“ß‰ ¶Õ?ßÒ?¶…¶“¶« ?: UserBot {BOT_VER}` \n"
-              f"==================================== \n"
-              f"`¶‘??ßÒ ??`: {DEFAULTUSER} \n"
-              f"`ßﬁ¶¡¶…¶«ß‰¶¡¶…¶«?ßÒ ??`: [??????? ??????](t.me/AbhinavShinde) \n"
-              f"`ß”¶“ß‰ ¶‘¶—ß‰¶…ßﬁ? ??`: {uptime} \n"
-              f"====================================\n")
+    output = (
+        f"‰∏Ç ‰∏Ö Âè£ Â∞∏   Â∑• ‰∏Ö   Âé∂ ‰πá ‰∏Ö   ‰∏Ç Âè£ ‰ªé ‰πá   ÂçÑ ‰πá ‰πö Â∞∏  ‰πÉ Â∑• Âåö Â∑• \n"
+        f"`Telethon version`: {version.__version__} \n"
+        f"`Python versionüêç`: {python_version()} \n"
+        f"`Bot Versionü§ò: Remix {BOT_VER}` \n"
+        f"==================================== \n"
+        f"`Moi Masterüòé`: {DEFAULTUSER} \n"
+        f"`Bot Uptime ‚è±Ô∏è`: {uptime} \n"
+        f"====================================\n"
     )
     if ALIVE_LOGO:
         try:
