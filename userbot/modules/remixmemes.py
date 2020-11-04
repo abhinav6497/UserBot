@@ -2353,7 +2353,7 @@ async def _(event):
             "😧",
             "😡",
             "😢",
-            "__**...NIKAL * PEHLI FURSAT MEIN [NIKAL](https://telegra.ph/file/ca0bb6c65786701742d70.mp4)....**__"
+            "__**...NIKAL * PEHLI FURSAT MEIN [NIKAL](https://telegra.ph/file/ca0bb6c65786701742d70.mp4)....**__",
         ]
 
         animation_interval = 1

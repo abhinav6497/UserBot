@@ -109,9 +109,7 @@ async def kang(event):
         )
 
     if new_pack:
-        await event.edit(
-            "`This Sticker Pack doesn't exist! Creating a new pack...`"
-        )
+        await event.edit("`This Sticker Pack doesn't exist! Creating a new pack...`")
         await newpack(is_anim, sticker, emoji, packtitle, packname)
     else:
         async with bot.conversation("t.me/Stickers") as conv:
