@@ -308,7 +308,7 @@ async def unblockpm(unblock):
         )
 
 
-@register(incoming=True, outgoing=True, disable_edited=True)
+@register(incoming=True, outgoing=False, disable_edited=True)
 async def monito_p_m_s(event):
     await event.get_sender()
     if event.is_private and not (await event.get_sender()).bot:
