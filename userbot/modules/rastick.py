@@ -3,7 +3,7 @@ import re
 
 from userbot import bot
 from userbot.events import register
-from asyncio import sleep
+
 EMOJI_PATTERN = re.compile(
     "["
     "\U0001F1E0-\U0001F1FF"  # flags (iOS)
@@ -106,14 +106,14 @@ async def rastick(animu):
         await sticcers[0].click(
             animu.chat_id,
             reply_to=animu.reply_to_msg_id,
-            silent=True if animu.is_reply else False,
+            silent=bool(animu.is_reply),
             hide_via=True,
         )
+
     except Exception:
         return await animu.edit(
             "`You cannot send inline results in this chat (caused by SendInlineBotResultRequest)`"
         )
-    await sleep(5)
     await animu.delete()
 
 
@@ -124,22 +124,20 @@ async def rollstick(tem):
         if tem.is_reply:
             text = (await tem.get_reply_message()).message
         else:
-            await tem.edit("`No text given, hence no stickers.`")
+            await tem.edit("`No text given, hence HONKA will say fuq Off.`")
             return
 
-    fries = await bot.inline_query(
-        "honka_says_bot", f"{(deEmojify(text))}.."
-    )
+    fries = await bot.inline_query("honka_says_bot", f"{(deEmojify(text))}..")
     try:
         await fries[0].click(
             tem.chat_id,
             reply_to=tem.reply_to_msg_id,
-            silent=True if tem.is_reply else False,
+            silent=bool(tem.is_reply),
             hide_via=True,
         )
+
     except Exception:
         return await tem.edit(
             "`You cannot send inline results in this chat (caused by SendInlineBotResultRequest)`"
         )
-    await sleep(2)
     await tem.delete()

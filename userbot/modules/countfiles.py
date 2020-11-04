@@ -3,7 +3,7 @@
 Original Module Credits: https://t.me/UniBorg/127"""
 from userbot.events import register
 from userbot.utils import humanbytes
-from userbot.utils.tools import (yaml_format, parse_pre)
+from userbot.utils.tools import parse_pre, yaml_format
 
 
 @register(outgoing=True, pattern="^.confs(?: |$)(.*)")
@@ -20,19 +20,11 @@ async def _(event):
         "in the chat ..."
     )
     hmm = {}
-    async for message in event.client.iter_messages(
-        entity=entity,
-        limit=None
-    ):
+    async for message in event.client.iter_messages(entity=entity, limit=None):
         if message and message.file:
             if message.file.mime_type not in hmm:
                 hmm[message.file.mime_type] = 0
             hmm[message.file.mime_type] += message.file.size
-    hnm = {}
-    for key in hmm:
-        hnm[key] = humanbytes(hmm[key])
-    await status_message.edit(
-        yaml_format(hnm),
-        parse_mode=parse_pre
-    )
+    hnm = {key: humanbytes(hmm[key]) for key in hmm}
+    await status_message.edit(yaml_format(hnm), parse_mode=parse_pre)
     await event.delete()

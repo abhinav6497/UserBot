@@ -1,7 +1,7 @@
 {
-  "name": "OPEN USERBOT REMIX",
+  "name": "尺 乇 从 工 乂 UserBot",
   "description": "[OUB-REMIX] A modular Telegram userbot running on Python 3.7+ with an sqlalchemy database, which can be coupled up with Mongo DB and a Redis backend",
-  "logo": "https://telegra.ph/file/d201a0cc4d7d5f420c419.jpg",
+  "logo": "https://telegra.ph/file/3b6b66c2de026c51aa906.jpg",
   "keywords": [
     "telegram",
     "userbot",
@@ -9,7 +9,7 @@
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/sahyam2019/oub-remix",
+  "repository": "https://github.com/niteshraj2310/RemixGeng",
   "website": "https://telegra.ph/How-to-host-a-Telegram-Userbot-11-02",
   "success_url": "https://t.me/PPE_Support",
   "stack": "container",
@@ -59,6 +59,15 @@
       "description": "Add the Heroku app name here. It helps with userbot updates.",
       "required": false
     },
+    "HEROKU_API_KEY_FALLBACK": {
+      "description": "Your Heroku fallback account API key this is only needed if you choose to run fallback into different heroku account, get it from 'https://dashboard.heroku.com/account'",
+      "required": false
+    },
+    "HEROKU_APP_FALLBACK_NAME": {
+      "description": "Heroku app name fallback, this should be app name you make now.",
+      "value": "",
+      "required": false
+    },
     "GITHUB_ACCESS_TOKEN": {
       "description": "Your GITHUB_ACCESS_TOKEN, get it from 'https://github.com/settings/tokens'",
       "value": ""
@@ -96,7 +105,7 @@
     },
     "BOTLOG": {
       "description": "Incase you want to turn off logging, put this to false",
-      "value": "False"
+      "value": "True"
     },
     "BOTLOG_CHATID": {
       "description": "ChatID of the Log group. Set it to '0' if BOTLOG = False and/or if LOGSPAMMER = False.",
@@ -108,7 +117,7 @@
     },
     "PM_AUTO_BAN": {
       "description": "PM Auto-Ban Feature Switch. Also known as the 'bleep blop, this is a bot...' module.",
-      "value": "False"
+      "value": "True"
     },
     "OCR_SPACE_API_KEY": {
       "description": "OCR API Key for .ocr command. Get from https://ocr.space/ocrapi",
@@ -191,6 +200,10 @@
     },
     "WEATHER_DEFCITY": {
       "description": "Set the default city for the userbot's weather module.",
+      "required": false
+    },
+    "WOLFRAM_ID": {
+      "description": "Ask your question to peru",
       "required": false
     },
     "LOGSPAMMER": {

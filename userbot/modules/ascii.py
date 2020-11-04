@@ -1,6 +1,5 @@
 # based on https://gist.github.com/wshanshan/c825efca4501a491447056849dd207d6
 # Ported for ProjectAlf by Alfiananda P.A
-
 import os
 import random
 
@@ -77,7 +76,7 @@ async def ascii(event):
         await event.delete()
         os.system("rm *.png *.webp *.mp4 *.tgs")
     except BaseException as e:
-        os.system("rm *.png *.webp *.mp4 *.png")
+        os.system("rm *.png *.webp *.mp4 *.tgs")
         return await event.edit(str(e))
 
 
@@ -95,8 +94,7 @@ async def asciiart(IMG, color1, color2, bgcolor):
     img = np.sum(np.asarray(img), axis=2)
     img -= img.min()
     img = (1.0 - img / img.max()) ** 2.2 * (chars.size - 1)
-    lines = ("\n".join(("".join(r)
-                        for r in chars[img.astype(int)]))).split("\n")
+    lines = ("\n".join(("".join(r) for r in chars[img.astype(int)]))).split("\n")
     nbins = len(lines)
     colorRange = list(Color(color1).range_to(Color(color2), nbins))
     newImg_width = letter_width * widthByLetter
@@ -105,10 +103,8 @@ async def asciiart(IMG, color1, color2, bgcolor):
     draw = ImageDraw.Draw(newImg)
     leftpadding = 0
     y = 0
-    lineIdx = 0
-    for line in lines:
+    for lineIdx, line in enumerate(lines):
         color = colorRange[lineIdx]
-        lineIdx += 1
         draw.text((leftpadding, y), line, color.hex, font=font)
         y += letter_height
     IMG = newImg.save("ascii.png")
@@ -117,11 +113,10 @@ async def asciiart(IMG, color1, color2, bgcolor):
 
 # this is from userge
 async def random_color():
-    color = [
+    return [
         "#" + "".join([random.choice("0123456789ABCDEF") for k in range(6)])
         for i in range(2)
     ]
-    return color
 
 
 @register(outgoing=True, pattern=r"^\.asciibg(?: |$)(.*)")
@@ -139,11 +134,11 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "ascii": "`.ascii`\n"
+        "ascii": ">`.ascii`\n"
         "Usage: create ascii art from media\n\n"
-        "`.asciis`\n"
+        ">`.asciis`\n"
         "Usage: same but upload the result as sticker\n\n"
-        "`.asciibg <color>`\n"
+        ">`.asciibg <color>`\n"
         "Usage: to change background color of this ascii module"
     }
 )

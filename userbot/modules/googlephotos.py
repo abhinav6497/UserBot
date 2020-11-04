@@ -9,8 +9,7 @@
 #
 # 114994699218449095458463470499996630
 #
-# വിവരണം അടിച്ചുമാറ്റിക്കൊണ്ട് പോകുന്നവർ ക്രെഡിറ്റ് വെച്ചാൽ സന്തോഷമേ ഉള്ളു..!
-
+# ?????? ????????????????????? ????????? ?????????? ??????? ???????? ?????..!
 import asyncio
 import logging
 import os
@@ -35,8 +34,8 @@ from userbot.events import register
 from userbot.utils import progress
 
 logging.basicConfig(
-    format="[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s",
-    level=logging.WARNING)
+    format="[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s", level=logging.WARNING
+)
 logger = logging.getLogger(__name__)
 
 # setup the gPhotos v1 API
@@ -60,7 +59,7 @@ async def setup_google_photos(event):
     is_cred_exists, _ = await check_creds(token_file, event)
     if not is_cred_exists:
         await create_token_file(token_file, event)
-    await event.edit("CREDS created. 😕😖😖")
+    await event.edit("CREDS created. ???")
 
 
 async def create_token_file(token_file, event):
@@ -129,14 +128,14 @@ async def upload_google_photos(event):
 
     if not event.reply_to_msg_id and not input_str:
         await event.edit(
-            "©️ <b>[REMIX]</b>\nNo one gonna help you 🤣🤣🤣🤣", parse_mode="html"
+            "?? <b>[REMIX]</b>\nNo one gonna help you ????", parse_mode="html"
         )
         return
 
     token_file = TOKEN_FILE_NAME
     is_cred_exists, creds = await check_creds(token_file, event)
     if not is_cred_exists:
-        await event.edit("Run <code>.gpsetup</code> first 😡😒😒", parse_mode="html")
+        await event.edit("Run <code>.gpsetup</code> first ???", parse_mode="html")
 
     service = build("photoslibrary", "v1", http=creds.authorize(Http()))
 
@@ -183,7 +182,8 @@ async def upload_google_photos(event):
         }
         # Step 1: Initiating an upload session
         step_one_response = await session.post(
-            f"{PHOTOS_BASE_URI}/v1/uploads", headers=headers,
+            f"{PHOTOS_BASE_URI}/v1/uploads",
+            headers=headers,
         )
 
         if step_one_response.status != 200:
@@ -227,7 +227,7 @@ async def upload_google_photos(event):
                         file_size,
                         event,
                         c_time,
-                        "uploading(gphoto)🧐?",
+                        "uploading(gphoto)??",
                     )
                 )
                 logger.info(response.headers)
@@ -288,6 +288,6 @@ async def upload_google_photos(event):
 def file_ops(file_path):
     file_size = os.stat(file_path).st_size
     mime_type = guess_type(file_path)[0]
-    mime_type = mime_type if mime_type else "text/plain"
+    mime_type = mime_type or "text/plain"
     file_name = file_path.split("/")[-1]
     return file_name, mime_type, file_size

@@ -1,4 +1,4 @@
-# Copyright (C) 2019 Adek Maulana
+# Copyright (C) 2020 Adek Maulana
 #
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,5 +14,4 @@ from .tools import (
     human_to_bytes,
     take_screen_shot,
     runcmd,
-    md5
-)
+    md5)

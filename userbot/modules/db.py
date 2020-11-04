@@ -1,12 +1,10 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.
+# Copyright (C) 2020 The Raphielscape Company LLC.
 #
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
 #
 """ Userbot module for getting information about the server. """
-
 from platform import uname
-
 
 from userbot import ALIVE_NAME, BOT_VER, is_mongo_alive, is_redis_alive
 from userbot.events import register
@@ -26,8 +24,10 @@ async def amireallydbs(dbs):
         db = "Redis Cache seems to be failing!"
     else:
         db = "Databases functioning normally!"
-    await dbs.edit(""
-                   f"`User:` {DEFAULTUSER} \n"
-                   f"`Database status: {db}\n`"
-                   f"`UserBot: {BOT_VER}`"
-                   "")
+    await dbs.edit(
+        ""
+        f"`User:` {DEFAULTUSER} \n"
+        f"`Database status: {db}\n`"
+        f"`REMIX-UserBot: {BOT_VER}`"
+        ""
+    )
