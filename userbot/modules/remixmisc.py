@@ -749,8 +749,7 @@ async def _(event):
                     await event.edit("I need admin priveleges to perform this action!")
                     e.append(str(e))
                     break
-                else:
-                    c += 1
+                c += 1
         if isinstance(i.status, UserStatusLastMonth):
             m += 1
             if "m" in input_str:
@@ -809,8 +808,7 @@ async def _(event):
                     await event.edit("I need admin priveleges to perform this action!")
                     e.append(str(e))
                     break
-                else:
-                    c += 1
+                c += 1
         elif i.deleted:
             d += 1
             if "d" in input_str:
