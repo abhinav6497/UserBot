@@ -6,7 +6,6 @@ from typing import Optional
 from typing import Tuple
 
 from userbot.utils import runcmd
-from userbot.utils import take_screen_shot
 
 
 # For using gif , animated stickers and videos in some parts , this
