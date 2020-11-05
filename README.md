@@ -9,7 +9,7 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/a85304953a4c470390ec777f6931e55d)](https://app.codacy.com/manual/abhinav6497/UserBot?utm_source=github.com&utm_medium=referral&utm_content=abhinav6497/UserBot&utm_campaign=Badge_Grade_Dashboard)
 [![codebeat badge](https://codebeat.co/badges/049f1ac3-dfc2-4ee6-93a3-e40c1569313f)](https://codebeat.co/projects/github-com-abhinav6497/userbot-sql-extended)
 [![Build status](https://ci.appveyor.com/api/projects/status/9h1i5ng3bjqgq11j?svg=true)](https://ci.appveyor.com/project/abhinav6497/userbot-w0cvp)
-[![StyleCI](https://github.styleci.io/repos/279673883/shield?branch=sql-extended)](https://github.styleci.io/repos/279673883?branch=sql-extended)
+[![StyleCI](https://github.styleci.io/repos/273289579/shield?branch=sql-extended)](https://github.styleci.io/repos/273289579?branch=sql-extended)
 ### `GitHub Integration`
 ![FailedChecker](https://github.com/abhinav6497/UserBot/workflows/FailedChecker/badge.svg?branch=sql-extended)  ![ErrorChecking](https://github.com/abhinav6497/UserBot/workflows/ErrorChecking/badge.svg)
 ![CodeQL](https://github.com/abhinav6497/UserBot/workflows/CodeQL/badge.svg?branch=sql-extended)  ![pylint](https://github.com/abhinav6497/UserBot/workflows/pylint/badge.svg)  ![CI](https://github.com/abhinav6497/UserBot/workflows/CI/badge.svg)
