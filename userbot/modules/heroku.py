@@ -83,7 +83,7 @@ async def variable(var):
             return True
         await var.edit("`Please set BOTLOG to True...`")
         return False
-    elif exe == "del":
+    if exe == "del":
         await var.edit("`Deleting information...`")
         variable = var.pattern_match.group(2)
         if variable == "":
