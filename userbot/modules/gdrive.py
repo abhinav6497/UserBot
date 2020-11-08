@@ -1058,13 +1058,12 @@ async def google_drive(gdrive):
                     )
                     await asyncio.sleep(2.5)
                     break
-                else:
-                    reply += (
-                        "`[UNKNOWN - ERROR]`\n\n"
-                        "`Status` : **BAD**\n"
-                        f"`Reason` : `{dl}` | `{str(e)}`\n\n"
-                    )
-                    continue
+                reply += (
+                    "`[UNKNOWN - ERROR]`\n\n"
+                    "`Status` : **BAD**\n"
+                    f"`Reason` : `{dl}` | `{str(e)}`\n\n"
+                )
+                continue
         await gdrive.respond(reply, link_preview=False)
         await gdrive.delete()
         return None
