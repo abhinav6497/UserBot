@@ -1013,8 +1013,8 @@ async def google_drive(gdrive):
             uri = value.split()
         else:
             for fileId in value.split():
-                one = True if any(map(str.isdigit, fileId)) else False
-                two = True if "-" in fileId or "_" in fileId else False
+                one = bool(any(map(str.isdigit, fileId)))
+                two = bool("-" in fileId or "_" in fileId)
                 if True in [one or two]:
                     try:
                         reply += await download_gdrive(gdrive, service, fileId)
@@ -1122,8 +1122,8 @@ async def set_upload_folder(gdrive):
     try:
         ext_id = re.findall(r"\bhttps?://drive\.google\.com\S+", inp)[0]
     except IndexError:
-        c1 = True if any(map(str.isdigit, inp)) else False
-        c2 = True if "-" in inp or "_" in inp else False
+        c1 = bool(any(map(str.isdigit, inp)))
+        c2 = bool("-" in inp or "_" in inp)
         if True in [c1 or c2]:
             parent_Id = inp
             await gdrive.edit(
