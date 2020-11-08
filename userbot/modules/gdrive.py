@@ -504,7 +504,7 @@ async def download_gdrive(gdrive, service, uri):
         await gdrive.client.delete_messages(BOTLOG_CHATID, ask.id)
     if ans.capitalize() == "N":
         return reply
-    elif ans.capitalize() == "Y":
+    if ans.capitalize() == "Y":
         try:
             result = await upload(gdrive, service, file_path, file_name, mimeType)
         except CancelProcess:
@@ -521,11 +521,10 @@ async def download_gdrive(gdrive, service, uri):
                 "`Status :` **OK**\n\n"
             )
         return reply
-    else:
-        await gdrive.client.send_message(
-            BOTLOG_CHATID, "`Invalid answer type [Y/N] only...`"
-        )
-        return reply
+    await gdrive.client.send_message(
+        BOTLOG_CHATID, "`Invalid answer type [Y/N] only...`"
+    )
+    return reply
 
 
 async def change_permission(service, Id):
@@ -538,8 +537,7 @@ async def change_permission(service, Id):
             in str(e)
         ):
             return
-        else:
-            raise e
+        raise e
     return
 
 
@@ -933,7 +931,7 @@ async def google_drive(gdrive):
     uri = None
     if not value and not gdrive.reply_to_msg_id:
         return None
-    elif value and gdrive.reply_to_msg_id:
+    if value and gdrive.reply_to_msg_id:
         await gdrive.edit(
             "`[UNKNOWN - ERROR]`\n\n"
             "`Status` : **failed**\n"
@@ -1010,8 +1008,7 @@ async def google_drive(gdrive):
                 await gdrive.respond(reply, link_preview=False)
                 await gdrive.delete()
                 return True
-            else:
-                return None
+            return None
         elif re.findall(r"\bhttps?://.*\.\S+", value) or "magnet:?" in value:
             uri = value.split()
         else:
@@ -1038,8 +1035,7 @@ async def google_drive(gdrive):
                 await gdrive.respond(reply, link_preview=False)
                 await gdrive.delete()
                 return True
-            else:
-                return None
+            return None
         if not uri and not gdrive.reply_to_msg_id:
             await gdrive.edit(
                 "`[VALUE - ERROR]`\n\n"
@@ -1106,21 +1102,20 @@ async def set_upload_folder(gdrive):
                 "`Status` : **OK** - using `G_DRIVE_FOLDER_ID` now."
             )
             return None
+        try:
+            del parent_Id
+        except NameError:
+            await gdrive.edit(
+                "`[FOLDER - SET]`\n\n" "`Status` : **BAD** - No parent_Id is set."
+            )
+            return False
         else:
-            try:
-                del parent_Id
-            except NameError:
-                await gdrive.edit(
-                    "`[FOLDER - SET]`\n\n" "`Status` : **BAD** - No parent_Id is set."
-                )
-                return False
-            else:
-                await gdrive.edit(
-                    "`[FOLDER - SET]`\n\n"
-                    "`Status` : **OK**"
-                    " - `G_DRIVE_FOLDER_ID` empty, will use root."
-                )
-                return None
+            await gdrive.edit(
+                "`[FOLDER - SET]`\n\n"
+                "`Status` : **OK**"
+                " - `G_DRIVE_FOLDER_ID` empty, will use root."
+            )
+            return None
     inp = gdrive.pattern_match.group(2)
     if not inp:
         await gdrive.edit(">`.gdfset put <folderURL/folderID>`")
@@ -1136,11 +1131,10 @@ async def set_upload_folder(gdrive):
                 "`[PARENT - FOLDER]`\n\n" "`Status` : **OK** - Successfully changed."
             )
             return None
-        else:
-            await gdrive.edit(
-                "`[PARENT - FOLDER]`\n\n" "`Status` : **WARNING** - forcing use..."
-            )
-            parent_Id = inp
+        await gdrive.edit(
+            "`[PARENT - FOLDER]`\n\n" "`Status` : **WARNING** - forcing use..."
+        )
+        parent_Id = inp
     else:
         if "uc?id=" in ext_id:
             await gdrive.edit(
