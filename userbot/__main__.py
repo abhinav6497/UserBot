@@ -14,7 +14,7 @@ from sys import argv
 from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
 from userbot import LOGS, bot, BOT_VER
 from userbot.modules import ALL_MODULES
-
+from userbot.modules_user import ALL_UMODULES
 
 INVALID_PH = '\nERROR: The Phone No. entered is INVALID' \
              '\n Tip: Use Country Code along with number.' \
@@ -29,10 +29,13 @@ except PhoneNumberInvalidError:
 for module_name in ALL_MODULES:
     imported_module = import_module("userbot.modules." + module_name)
 
+for module_name in ALL_UMODULES:
+    imported_umodule = import_module("userbot.modules_user." + module_name)
+
 LOGS.info(f"You are running 尺 乇 从 工 乂 UserBot [{BOT_VER}]")
 
 LOGS.info(
-    "Congratulations, your userbot is now running !! Test it by typing .start/.ping in any chat."
+    "Congratulations Lamvde, your userbot is now running !! Test it by typing .start/.ping in any chat."
     "\nIf you need assistance, head to https://t.me/RemixSupport")
 
 

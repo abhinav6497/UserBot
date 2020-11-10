@@ -369,7 +369,7 @@ with bot:
 
         @tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
-            if event.message.from_id != uid:
+            if event.message.sender_id != uid:
                 await event.reply(
                     "I'm [尺 乇 从 工 乂 UserBot](https://github.com/abhinav6497/UserBot) modules helper...\nAbey Saley please make your own bot, don't use mine 😋"
                 )
