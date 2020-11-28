@@ -69,21 +69,23 @@ async def variable(var):
                     return True
                 await var.edit("`Please set BOTLOG to True...`")
                 return False
-            await var.edit("`Information don't exists...`")
-            return True
-        configvars = heroku_var.to_dict()
-        if BOTLOG:
-            msg = ""
-            for item in configvars:
-                msg += f"`{item}` = `{configvars[item]}`\n"
-            await var.client.send_message(
-                BOTLOG_CHATID, "#CONFIGVARS\n\n" "**ConfigVars**:\n" f"{msg}"
-            )
-            await var.edit("`Received to BOTLOG_CHATID...`")
-            return True
-        await var.edit("`Please set BOTLOG to True...`")
-        return False
-    if exe == "del":
+            else:
+                await var.edit("`Information don't exists...`")
+                return True
+        else:
+            configvars = heroku_var.to_dict()
+            if BOTLOG:
+                msg = ""
+                for item in configvars:
+                    msg += f"`{item}` = `{configvars[item]}`\n"
+                await var.client.send_message(
+                    BOTLOG_CHATID, "#CONFIGVARS\n\n" "**ConfigVars**:\n" f"{msg}"
+                )
+                await var.edit("`Received to BOTLOG_CHATID...`")
+                return True
+            await var.edit("`Please set BOTLOG to True...`")
+            return False
+    elif exe == "del":
         await var.edit("`Deleting information...`")
         variable = var.pattern_match.group(2)
         if variable == "":
