@@ -1,5 +1,5 @@
-[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/abhinav6497/UserBot) <a href="https://deepsource.io/gh/abhinav6497/UserBot/?ref=repository-badge" target="_blank"><img alt="DeepSource" title="DeepSource" src="https://static.deepsource.io/deepsource-badge-light-mini.svg"></a>
-[![Build Status](https://img.shields.io/travis/abhinav6497/UserBot.svg?branch=sql-extended?label=Travis%20CI&logo=travis&style=flat-square)](https://travis-ci.org/abhinav6497/UserBot)&nbsp;
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/abhinav6497/UserBot)
+[![Build Status](https://travis-ci.com/abhinav6497/UserBot.svg?branch=sql-extended)](https://travis-ci.com/abhinav6497/UserBot)
 [![code style: black](https://img.shields.io/static/v1?label=code%20style&message=black&color=black&style=flat-square)](https://github.com/psf/black)
 <a href="https://github.com/abhinav6497/UserBot/watchers"><img src="https://img.shields.io/github/watchers/abhinav6497/UserBot?label=Watch&style=flat-square&logo=github&color=violet" alt="Watch" /></a>
 <a href="https://github.com/abhinav6497/UserBot/commits/sql-extended"><img src="https://img.shields.io/github/last-commit/abhinav6497/UserBot/sql-extended?label=Last%20Commit&style=flat-square&logo=github&color=Green" alt="Commit" /></a>
@@ -7,9 +7,12 @@
 <a href="https://t.me/AbhinavShinde"><img src="https://img.shields.io/badge/-Contekt Here%20-grey.svg?logo=Telegram"> </a>
 [![Requirements Status](https://requires.io/github/abhinav6497/UserBot/requirements.svg?branch=sql-extended)](https://requires.io/github/abhinav6497/UserBot/requirements/?branch=sql-extended)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/a85304953a4c470390ec777f6931e55d)](https://app.codacy.com/manual/abhinav6497/UserBot?utm_source=github.com&utm_medium=referral&utm_content=abhinav6497/UserBot&utm_campaign=Badge_Grade_Dashboard)
-[![codebeat badge](https://codebeat.co/badges/049f1ac3-dfc2-4ee6-93a3-e40c1569313f)](https://codebeat.co/projects/github-com-abhinav6497/userbot-sql-extended)
+[![codebeat badge](https://codebeat.co/badges/049f1ac3-dfc2-4ee6-93a3-e40c1569313f)](https://codebeat.co/projects/github-com-abhinav6497-userbot-sql-extended)
 [![Build status](https://ci.appveyor.com/api/projects/status/9h1i5ng3bjqgq11j?svg=true)](https://ci.appveyor.com/project/abhinav6497/userbot-w0cvp)
 [![StyleCI](https://github.styleci.io/repos/273289579/shield?branch=sql-extended)](https://github.styleci.io/repos/273289579?branch=sql-extended)
+
+[![DeepSource](https://deepsource.io/gh/abhinav6497/UserBot.svg/?label=active+issues&show_trend=true)](https://deepsource.io/gh/abhinav6497/UserBot/?ref=repository-badge)
+[![DeepSource](https://deepsource.io/gh/abhinav6497/UserBot.svg/?label=resolved+issues&show_trend=true)](https://deepsource.io/gh/abhinav6497/UserBot/?ref=repository-badge)
 ### `GitHub Integration`
 ![FailedChecker](https://github.com/abhinav6497/UserBot/workflows/FailedChecker/badge.svg?branch=sql-extended)  ![ErrorChecking](https://github.com/abhinav6497/UserBot/workflows/ErrorChecking/badge.svg)
 ![CodeQL](https://github.com/abhinav6497/UserBot/workflows/CodeQL/badge.svg?branch=sql-extended)  ![pylint](https://github.com/abhinav6497/UserBot/workflows/pylint/badge.svg)  ![CI](https://github.com/abhinav6497/UserBot/workflows/CI/badge.svg)
