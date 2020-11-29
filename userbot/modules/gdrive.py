@@ -1060,7 +1060,7 @@ async def google_drive(gdrive):
                 await gdrive.delete()
                 return True
             return None
-        if re.findall(r"\bhttps?://.*\.\S+", value) or "magnet:?" in value:
+        elif re.findall(r"\bhttps?://.*\.\S+", value) or "magnet:?" in value:
             uri = value.split()
         else:
             for fileId in value.split():
@@ -1115,13 +1115,14 @@ async def google_drive(gdrive):
                     )
                     await asyncio.sleep(2.5)
                     break
-                """ - if something bad happened, continue to next uri - """
-                reply += (
-                    "`[UNKNOWN - ERROR]`\n\n"
-                    "`Status` : **BAD**\n"
-                    f"`Reason` : `{dl}` | `{str(e)}`\n\n"
-                )
-                continue
+                else:
+                    """ - if something bad happened, continue to next uri - """
+                    reply += (
+                        "`[UNKNOWN - ERROR]`\n\n"
+                        "`Status` : **BAD**\n"
+                        f"`Reason` : `{dl}` | `{str(e)}`\n\n"
+                    )
+                    continue
         await gdrive.respond(reply, link_preview=False)
         await gdrive.delete()
         return None
