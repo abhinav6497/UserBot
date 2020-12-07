@@ -803,28 +803,28 @@ async def kick(usr):
 async def get_users(show):
     """For .users command, list all of the users in a chat."""
     info = await show.client.get_entity(show.chat_id)
-    title = info.title if info.title else "this chat"
+    title = info.title or "this chat"
     mentions = "Users in {}: \n".format(title)
     try:
-        if not show.pattern_match.group(1):
-            async for user in show.client.iter_participants(show.chat_id):
-                if not user.deleted:
-                    mentions += (
-                        f"\n[{user.first_name}](tg://user?id={user.id}) `{user.id}`"
-                    )
-                else:
-                    mentions += f"\nDeleted Account `{user.id}`"
-        else:
+        if show.pattern_match.group(1):
             searchq = show.pattern_match.group(1)
             async for user in show.client.iter_participants(
                 show.chat_id, search=f"{searchq}"
             ):
-                if not user.deleted:
+                if user.deleted:
+                    mentions += f"\nDeleted Account `{user.id}`"
+                else:
                     mentions += (
                         f"\n[{user.first_name}](tg://user?id={user.id}) `{user.id}`"
                     )
-                else:
+        else:
+            async for user in show.client.iter_participants(show.chat_id):
+                if user.deleted:
                     mentions += f"\nDeleted Account `{user.id}`"
+                else:
+                    mentions += (
+                        f"\n[{user.first_name}](tg://user?id={user.id}) `{user.id}`"
+                    )
     except ChatAdminRequiredError as err:
         mentions += " " + str(err) + "\n"
     try:
@@ -895,7 +895,7 @@ async def get_user_from_id(user, event):
 async def get_usersdel(show):
     """For .usersdel command, list all of the deleted users in a chat."""
     info = await show.client.get_entity(show.chat_id)
-    title = info.title if info.title else "this chat"
+    title = info.title or "this chat"
     mentions = "deletedUsers in {}: \n".format(title)
     try:
         if not show.pattern_match.group(1):
@@ -1250,11 +1250,13 @@ async def set_warn_strength(event):
             await event.edit("Warn Strength Set To Ban User.")
             return
 
-        if args in ("off", "no"):
+        elif args in ("off", "no"):
             sql.set_warn_strength(event.chat_id, True)
             await event.edit("Warn Strength Set To Kick User.")
             return
-        await event.edit("`Please send Correct Arg!`")
+
+        else:
+            await event.edit("`Please send Correct Arg!`")
     else:
         limit, soft_warn = sql.get_warn_setting(event.chat_id)
         if soft_warn:
